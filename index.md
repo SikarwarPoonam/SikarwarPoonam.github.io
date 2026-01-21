@@ -27,6 +27,7 @@ $LiCoO_2 \leftrightarrow Li_{1-x}CoO_2 + xLi^+ + xe^-$
 
 And here is the Intrinsic Carrier Concentration formula:
 $$n_i = \sqrt{N_c N_v} e^{-E_g / 2k_BT}$$
+
 ---
 
 [Check out my GitHub Profile](https://github.com/your-username)
