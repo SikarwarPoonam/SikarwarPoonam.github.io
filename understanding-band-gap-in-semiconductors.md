@@ -11,5 +11,5 @@ In solar cells, photons with energy greater than the band gap ($h\nu > E_g$) can
 
 
 
-* **Silicon:** 1.1 eV (Indirect)
+* **Silicon:** 1.1 eV (Indirect) x^2
 * **Gallium Arsenide:** 1.42 eV (Direct)
