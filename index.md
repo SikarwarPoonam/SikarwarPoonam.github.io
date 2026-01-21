@@ -29,5 +29,7 @@ And here is the Intrinsic Carrier Concentration formula:
 $$n_i = \sqrt{N_c N_v} e^{-E_g / 2k_BT}$$
 
 ---
-
+### Latest Articles
+* [Understanding Band Gap in Semiconductors](./understanding-band-gap-in-semiconductors.html)
+  
 [Check out my GitHub Profile](https://github.com/your-username)
