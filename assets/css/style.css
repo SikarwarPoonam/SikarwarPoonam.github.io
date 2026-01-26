@@ -1,0 +1,86 @@
+/* --- 1. COLOR PALETTE (Solar & Tech Theme) --- */
+:root {
+  --bg-color: #ffffff;           /* White Background */
+  --text-color: #333333;         /* Dark Grey Text */
+  --primary-color: #004d99;      /* Silicon Blue (Links/Headers) */
+  --accent-color: #ff6600;       /* Solar Orange (Highlights) */
+  --code-bg: #f4f4f4;            /* Light Grey for Code Blocks */
+  --nav-bg: #004d99;             /* Dark Blue for Nav Bar */
+  --nav-text: #ffffff;           /* White Text for Nav */
+}
+
+/* --- 2. BASIC SETUP --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: var(--bg-color);
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* --- 3. HEADER & NAVIGATION --- */
+header {
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 20px;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+
+/* Make the Navigation a Horizontal Bar */
+nav ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0;
+  margin-top: 20px;
+  display: flex;         /* Make items sit side-by-side */
+  gap: 20px;             /* Space between buttons */
+  background: var(--nav-bg);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--nav-text);
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--accent-color); /* Turn orange when hovering */
+}
+
+/* --- 4. TECHNICAL CONTENT STYLING --- */
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Code Blocks */
+pre, code {
+  background-color: var(--code-bg);
+  font-family: "Courier New", Courier, monospace;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+blockquote {
+  border-left: 4px solid var(--accent-color);
+  margin: 0;
+  padding-left: 15px;
+  color: #555;
+  font-style: italic;
+}
