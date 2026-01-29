@@ -24,29 +24,25 @@
   </head>
   
   <body>
-    <div class="wrapper">
-      <header>
-        <h1><a href="{{ "/" | relative_url }}">{{ site.title | default: "My Lab" }}</a></h1>
-        <p>{{ site.description }}</p>
-        
-<nav>
-          <ul>
-            <li><a href="{{ "/" | relative_url }}">Home</a></li>
-            <li><a href="{{ "/about.html" | relative_url }}">About Me</a></li>
-            <li><a href="{{ "/projects.html" | relative_url }}">Projects</a></li>
-            <li><a href="https://github.com/{{ site.github.owner_name }}">GitHub Profile</a></li>
-          </ul>
-        </nav>
-      </header>
-      
-      <section>
-        {{ content }}
-      </section>
-      
-      <footer>
-        <p><small>Hosted on GitHub Pages</small></p>
-      </footer>
+  <header>
+    <div class="header-container">
+      <h3><a href="{{ "/" | relative_url }}" style="color: var(--primary-blue); text-decoration: none;">RAHUL.DEV</a></h3>
+      <nav>
+        <ul>
+          <li><a href="{{ "/" | relative_url }}">Home</a></li>
+          <li><a href="{{ "/projects.html" | relative_url }}">Projects</a></li>
+          <li><a href="{{ "/about.html" | relative_url }}">About</a></li>
+        </ul>
+      </nav>
     </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer style="background: #f7fafc; padding: 40px 0; text-align: center; margin-top: 50px;">
+    <p style="color: #718096; font-size: 0.9rem;">&copy; 2026 Semiconductor Learning Lab.</p>
+  </footer>
   </body>
 </html>
