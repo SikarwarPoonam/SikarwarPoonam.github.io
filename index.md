@@ -5,8 +5,8 @@ title: The Energy Lab
 
 <section class="hero">
   <div class="hero-text">
-    <h1>Building the Future of Energy.</h1>
-    <p>Exploring the frontiers of Semiconductor Physics, Solar Photovoltaics, and Battery storage technologies.</p>
+    <h1>The Energy Lab.</h1>
+    <p>Exploring the frontiers of Semiconductor Physics, Solar Photovoltaics, and Energy technologies.</p>
     <a href="/projects.html" class="btn-primary">View My Projects &rarr;</a>
   </div>
   <div class="hero-image">
