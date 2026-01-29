@@ -48,22 +48,6 @@ title: The Energy Lab
       </div>
     </div>
       </div>
-
-      <div class="service-card">
-        <div class="icon-box">🔋</div>
-        <h3>Battery Science</h3>
-        <p>Analyzing anode degradation, SEI layer formation, and electrochemical impedance spectroscopy.</p>
-        <a href="#" style="color: var(--primary-blue); font-weight: bold; text-decoration: none;">View Experiments &rarr;</a>
-      </div>
-
-      <div class="service-card">
-        <div class="icon-box">💎</div>
-        <h3>Crystal Growth</h3>
-        <p>Simulating Czochralski (Cz) processes and optimizing polysilicon charging logic with Python.</p>
-        <a href="#" style="color: var(--primary-blue); font-weight: bold; text-decoration: none;">Check Code &rarr;</a>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section class="stats-bar">
