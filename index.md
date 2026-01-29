@@ -1,35 +1,26 @@
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    }
-  };
-</script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-# Welcome to My Lab
+<div class="intro">
+  <h1>Welcome to the Lab</h1>
+  <p style="font-size: 1.2rem; color: #4a5568;">
+    Documenting my journey into <strong>Semiconductors</strong>, <strong>Solar PV</strong>, and <strong>Battery Tech</strong>.
+  </p>
+</div>
 
-Hi, I'm a researcher passionate about **Sustainability** and **Renewable Energy**. 
-I am currently working on projects involving **Silicon Crystal Growth** optimization and **Material Science**.
+<hr style="margin: 40px 0; border: 0; border-top: 1px solid #ddd;">
 
-## Recent Projects
+<h2>Latest Experiments</h2>
 
-### 1. Polysilicon Charging Optimization
-*Using FlexSim and Python to optimize charging resistivity.*
-
-### 2. Electrochemistry
-*Deep dives into Anode/Cathode engineering.*
-### Solar Physics Test
-
-Here is the chemical reaction for a Lithium-ion battery cathode:
-$LiCoO_2 \leftrightarrow Li_{1-x}CoO_2 + xLi^+ + xe^-$
-
-And here is the Intrinsic Carrier Concentration formula:
-$$n_i = \sqrt{N_c N_v} e^{-E_g / 2k_BT}$$
-
----
-### Latest Articles
-* [Understanding Band Gap in Semiconductors](./understanding-band-gap-in-semiconductors.html)
+<div class="post-list">
   
-[Check out my GitHub Profile](https://github.com/your-username)
+  <a href="./understanding-band-gaps.html" class="post-card">
+    <h3 class="post-title">Understanding Band Gaps</h3>
+    <p class="post-meta">Physics • Solar Cells</p>
+    <p>Why photons with energy > Eg create electron-hole pairs.</p>
+  </a>
+
+  <a href="./projects.html" class="post-card">
+    <h3 class="post-title">My Projects</h3>
+    <p class="post-meta">Portfolio</p>
+    <p>Silicon Crystal Growth & FlexSim Models.</p>
+  </a>
+
+</div>
