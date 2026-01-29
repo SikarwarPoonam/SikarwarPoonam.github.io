@@ -1,86 +1,119 @@
-/* --- 1. COLOR PALETTE (Solar & Tech Theme) --- */
+/* --- 1. MODERN TECH PALETTE --- */
 :root {
-  --bg-color: #ffffff;           /* White Background */
-  --text-color: #333333;         /* Dark Grey Text */
-  --primary-color: #004d99;      /* Silicon Blue (Links/Headers) */
-  --accent-color: #ff6600;       /* Solar Orange (Highlights) */
-  --code-bg: #f4f4f4;            /* Light Grey for Code Blocks */
-  --nav-bg: #004d99;             /* Dark Blue for Nav Bar */
-  --nav-text: #ffffff;           /* White Text for Nav */
+  --bg-color: #f8f9fa;             /* Soft light grey background */
+  --card-bg: #ffffff;              /* Pure white cards */
+  --text-primary: #1a202c;         /* Nearly black for reading */
+  --text-secondary: #4a5568;       /* Grey for dates/metadata */
+  --accent-color: #2b6cb0;         /* Silicon Blue */
+  --accent-hover: #2c5282;         /* Darker Blue */
+  --code-bg: #edf2f7;              /* Light blue-grey for code */
+  --border-radius: 12px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
 }
 
-/* --- 2. BASIC SETUP --- */
+/* --- 2. TYPOGRAPHY --- */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  color: var(--text-color);
-  background: var(--bg-color);
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.7;
   margin: 0;
-  padding: 0;
+}
+
+h1, h2, h3, nav a {
+  font-family: 'Space Grotesk', sans-serif; /* Tech-looking header font */
+  color: #1a202c;
+  letter-spacing: -0.02em;
+}
+
+/* --- 3. NAVBAR GLASS EFFECT --- */
+header {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 0;
 }
 
 .wrapper {
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
-/* --- 3. HEADER & NAVIGATION --- */
-header {
-  margin-bottom: 40px;
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 20px;
-}
-
-header h1 a {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-size: 2.5rem;
-}
-
-/* Make the Navigation a Horizontal Bar */
 nav ul {
-  list-style-type: none; /* Remove bullets */
+  display: flex;
+  gap: 30px;
+  list-style: none;
   padding: 0;
-  margin-top: 20px;
-  display: flex;         /* Make items sit side-by-side */
-  gap: 20px;             /* Space between buttons */
-  background: var(--nav-bg);
-  padding: 10px 20px;
-  border-radius: 5px;
+  margin: 0;
 }
 
 nav a {
   text-decoration: none;
-  color: var(--nav-text);
-  font-weight: bold;
+  font-weight: 600;
+  color: var(--text-secondary);
+  position: relative;
+  transition: color 0.2s;
 }
 
 nav a:hover {
-  color: var(--accent-color); /* Turn orange when hovering */
+  color: var(--accent-color);
 }
 
-/* --- 4. TECHNICAL CONTENT STYLING --- */
-/* Make images responsive */
+/* --- 4. ARTICLE CARDS (The Big Change) --- */
+.post-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.post-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(0,0,0,0.03);
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card:hover {
+  transform: translateY(-5px); /* Moves up slightly */
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-color);
+}
+
+.post-title {
+  font-size: 1.4rem;
+  margin: 0 0 10px 0;
+  color: var(--accent-color);
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* --- 5. IMAGES & CODE --- */
 img {
+  border-radius: 8px;
   max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Code Blocks */
-pre, code {
-  background-color: var(--code-bg);
-  font-family: "Courier New", Courier, monospace;
-  padding: 2px 4px;
-  border-radius: 3px;
-}
-
-blockquote {
-  border-left: 4px solid var(--accent-color);
-  margin: 0;
-  padding-left: 15px;
-  color: #555;
-  font-style: italic;
+code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #c05621; /* Orange for inline code */
 }
