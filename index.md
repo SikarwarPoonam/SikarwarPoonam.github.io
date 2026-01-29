@@ -10,7 +10,7 @@ title: The Energy Lab
     <a href="/projects.html" class="btn-primary">View My Projects &rarr;</a>
   </div>
   <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" alt="Solar Lab">
+    <img src="https://asiapowerwatch.com/wp-content/uploads/2024/01/Semicons-clean-energy.png">
   </div>
 </section>
 
