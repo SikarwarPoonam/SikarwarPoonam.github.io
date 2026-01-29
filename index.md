@@ -21,10 +21,32 @@ title: The Energy Lab
     
     <div class="grid-3">
       <div class="service-card">
-        <div class="icon-box">☀️</div>
+        <div class="icon-box">
+          <i class="fa-solid fa-solar-panel"></i>
+        </div>
         <h3>Solar PV Tech</h3>
         <p>Deep dive into Heterojunction (HJT) cells, PERC architectures, and increasing efficiency limits.</p>
         <a href="#" style="color: var(--primary-blue); font-weight: bold; text-decoration: none;">Read Notes &rarr;</a>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <h3>Battery Science</h3>
+        <p>Analyzing anode degradation, SEI layer formation, and electrochemical impedance spectroscopy.</p>
+        <a href="#" style="color: var(--primary-blue); font-weight: bold; text-decoration: none;">View Experiments &rarr;</a>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+        <h3>Semiconductors</h3>
+        <p>Simulating Czochralski (Cz) processes and optimizing polysilicon charging logic with Python.</p>
+        <a href="#" style="color: var(--primary-blue); font-weight: bold; text-decoration: none;">Check Code &rarr;</a>
+      </div>
+    </div>
       </div>
 
       <div class="service-card">
