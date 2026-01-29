@@ -1,134 +1,174 @@
-/* --- 1. SOLAR TECH PALETTE (Restored) --- */
+/* --- 1. CORE VARIABLES (Solar Blue & Orange) --- */
 :root {
-  --bg-color: #f4f7f6;             /* Very light cool grey */
-  --card-bg: #ffffff;              /* Pure white cards */
-  --text-primary: #1a202c;         /* Dark Grey for reading */
-  --text-secondary: #4a5568;       /* Lighter grey for meta data */
-  
-  /* YOUR BRAND COLORS */
-  --primary-blue: #004d99;         /* Deep Silicon Blue */
-  --solar-orange: #ff6600;         /* Energy Orange */
-  
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 77, 153, 0.2), 0 4px 6px -2px rgba(0,0,0,0.05); /* Blue shadow! */
-  --border-radius: 12px;
+  --bg-color: #ffffff;
+  --text-main: #1a202c;
+  --text-light: #718096;
+  --primary-blue: #004d99;       /* Deep Silicon Blue */
+  --solar-orange: #ff6600;       /* Energy Orange (Buttons/Accents) */
+  --light-gray: #f7fafc;         /* Background for alternating sections */
+  --max-width: 1100px;           /* Wider layout like the image */
 }
 
-/* --- 2. TYPOGRAPHY --- */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-primary);
-  line-height: 1.7;
+  color: var(--text-main);
   margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
 h1, h2, h3 {
   font-family: 'Space Grotesk', sans-serif;
-  color: var(--primary-blue); /* Headers are now Blue again */
-  letter-spacing: -0.02em;
+  color: var(--primary-blue);
+  margin-top: 0;
 }
 
-/* --- 3. HEADER (Deep Blue Bar) --- */
+/* --- 2. HEADER (Clean White like the image) --- */
 header {
-  background: var(--primary-blue); /* Back to Solid Blue */
-  color: #ffffff;
-  padding: 15px 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
-/* Fix links inside the blue header to be white */
-header h1 a {
-  color: #ffffff !important; 
-  text-decoration: none;
-}
-
-.wrapper {
-  max-width: 850px;
+.header-container {
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Navigation Links */
 nav ul {
   display: flex;
   gap: 30px;
   list-style: none;
-  padding: 0;
   margin: 0;
-  margin-top: 10px;
+  padding: 0;
 }
 
 nav a {
   text-decoration: none;
+  color: var(--text-main);
   font-weight: 600;
-  color: rgba(255,255,255, 0.8); /* Slightly transparent white */
-  transition: color 0.2s;
-}
-
-nav a:hover {
-  color: var(--solar-orange); /* Turns Bright Orange on hover */
-}
-
-/* --- 4. ARTICLE CARDS --- */
-.post-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
-  padding: 0;
-}
-
-.post-card {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 25px;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.2s, box-shadow 0.2s;
-  border-top: 5px solid transparent; /* Hidden top border */
-  text-decoration: none;
-  display: block;
-}
-
-.post-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-top: 5px solid var(--solar-orange); /* Orange strip appears on hover */
-}
-
-.post-title {
-  font-size: 1.4rem;
-  margin: 0 0 10px 0;
-  color: var(--primary-blue);
-}
-
-.post-meta {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: bold;
-}
-
-.post-card p {
-  color: var(--text-primary);
   font-size: 0.95rem;
 }
 
-/* --- 5. IMAGES & CODE --- */
-img {
-  border-radius: 8px;
-  max-width: 100%;
-  border: 1px solid #ddd;
+nav a:hover {
+  color: var(--solar-orange);
 }
 
-code {
-  background: #e6f0ff; /* Very light blue bg for code */
-  color: var(--primary-blue);
-  padding: 2px 6px;
+/* --- 3. HERO SECTION (The Big Top Part) --- */
+.hero {
+  max-width: var(--max-width);
+  margin: 60px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Split 50/50 */
+  gap: 50px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem; /* Big headline */
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #000; /* Strict black for contrast */
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--text-main); /* Black button like image */
+  color: #fff;
+  padding: 12px 30px;
   border-radius: 4px;
-  font-family: 'Courier New', monospace;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--solar-orange); /* Orange on hover */
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 20px 20px 0px var(--solar-orange); /* The square accent from the image */
+}
+
+/* --- 4. 3-COLUMN SERVICES GRID --- */
+.services-section {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.icon-box {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--primary-blue);
+}
+
+/* --- 5. STATS SECTION (Dark Bar) --- */
+.stats-bar {
+  background-color: #111; /* Dark background from image footer */
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.stats-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.stat-item h2 {
+  color: #fff;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.stat-item p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; text-align: center; }
+  .hero-text h1 { font-size: 2.5rem; }
+  .stats-grid { flex-direction: column; gap: 30px; }
 }
