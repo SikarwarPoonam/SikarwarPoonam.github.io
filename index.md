@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: The Energy Lab
 ---
 
 <section class="hero">
