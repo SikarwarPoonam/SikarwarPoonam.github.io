@@ -34,8 +34,8 @@ title: The Energy Lab
           <i class="fa-solid fa-bolt"></i>
         </div>
         <h3>Material Science</h3>
-        <p>Analyzing anode degradation, SEI layer formation, and electrochemical impedance spectroscopy.</p>
-        <a href="#" style="color: var(--primary-blue); font-weight: bold; text-decoration: none;">View Experiments &rarr;</a>
+        <p>Exploring structural characteristics, optoelectronic properties, and future material for revolutionizing the field of green energy.</p>
+        <a href="#" style="color: var(--primary-blue); font-weight: bold; text-decoration: none;">View Details &rarr;</a>
       </div>
 
       <div class="service-card">
