@@ -3,13 +3,14 @@ layout: default
 title: High-Purity Silicon Production
 description: A comparative analysis of Czochralski growth in Semiconductor vs. Solar industries.
 ---
-<div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+
+<div class="container">
 
 # The Production of High-Purity Silicon
 
 The production of high-purity silicon is the bedrock of both the semiconductor and solar industries. While they share a common ancestor in the **Czochralski (CZ)** method, their paths diverge based on the required "perfection" of the crystal.
 
-
+![Diagram of Czochralski process](/assets/images/placeholder.txt)
 
 ## 1. The Core Process: Czochralski (CZ) Growth
 Most silicon crystals are grown using the CZ method. The process involves melting high-purity polysilicon in a quartz crucible, dipping a small seed crystal into the melt, and slowly pulling it upward while rotating.
@@ -55,3 +56,5 @@ While high-efficiency solar panels (like TOPCon or HJT) use CZ monocrystalline s
 > * **Braga, A. F. B., et al. (2008).** *Solar grade silicon: Challenges and opportunities.* Highlights the transition from 6N to 7N purity.
 > * **Saga, T. (2010).** *Advances in Crystalline Silicon Solar Cell Technology.* Discusses the performance gap between CZ mono-Si and multicrystalline-Si.
 > * **Mullins, J. T. (2021).** *Semiconductor Silicon Crystal Growth.* Overview of the Float-Zone method in power electronics.
+
+</div>
