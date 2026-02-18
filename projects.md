@@ -10,7 +10,7 @@ title: Projects
     
     <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
 
-      <a href="./silicon-growth.html" class="post-card" style="text-decoration: none; display: block; color: inherit;">
+      <a href="./Silicon-crystal-growth.html" class="post-card" style="text-decoration: none; display: block; color: inherit;">
         <div class="icon-box">
           <i class="fa-solid fa-microchip"></i>
         </div>
