@@ -33,7 +33,7 @@ title: The Energy Lab
         <div class="icon-box">
           <i class="fa-solid fa-bolt"></i>
         </div>
-        <h3>Battery Science</h3>
+        <h3>Material Science</h3>
         <p>Analyzing anode degradation, SEI layer formation, and electrochemical impedance spectroscopy.</p>
         <a href="#" style="color: var(--primary-blue); font-weight: bold; text-decoration: none;">View Experiments &rarr;</a>
       </div>
