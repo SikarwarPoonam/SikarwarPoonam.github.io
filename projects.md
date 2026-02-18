@@ -7,7 +7,7 @@ title: Projects
 ## 1. Silicon Crystal Growth
 *Objective:* Optimize the Czochralski process for 930kg polysilicon charges.
 <a href="./Silicon-crystal-growth.html" class="post-card">
-<div class="icon-box">
+    <div class="icon-box">
       <i class="fa-solid fa-microchip"></i>
     </div>
     <h3 class="post-title">High-Purity Silicon Production</h3>
