@@ -10,7 +10,7 @@ description: A comparative analysis of Czochralski growth in Semiconductor vs. S
 
 The production of high-purity silicon is the bedrock of both the semiconductor and solar industries. While they share a common ancestor in the **Czochralski (CZ)** method, their paths diverge based on the required "perfection" of the crystal.
 
-![Diagram of Czochralski process](/assets/images/czochralski.png)
+![Diagram of Czochralski process](/assets/images/cz-process.png)
 
 ## 1. The Core Process: Czochralski (CZ) Growth
 Most silicon crystals are grown using the CZ method. The process involves melting high-purity polysilicon in a quartz crucible, dipping a small seed crystal into the melt, and slowly pulling it upward while rotating.
