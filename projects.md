@@ -8,7 +8,7 @@ title: Projects
 *Objective:* Optimize the Czochralski process for polysilicon charges.
 <div class="icon-box">
 <i class="fa-solid fa-microchip"></i>
-<a href="./Silicon-crystal-growth.html" class="post-card">
+<a href="./Silicon-crystal-growth.html" class="post-card"></a>
 </div>
 <h3 class="post-title">High-Purity Silicon Production</h3>
 <p class="post-meta">Crystal Growth • CZ Method</p>
