@@ -5,7 +5,7 @@ title: Projects
 # My Technical Projects
 
 ## 1. Silicon Crystal Growth
-*Objective:* Optimize the Czochralski process for 930kg polysilicon charges.
+*Objective:* Optimize the Czochralski process for polysilicon charges.
 <a href="./Silicon-crystal-growth.html" class="post-card">
     <div class="icon-box">
       <i class="fa-solid fa-microchip"></i>
