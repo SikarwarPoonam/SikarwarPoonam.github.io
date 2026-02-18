@@ -3,14 +3,13 @@ layout: default
 title: High-Purity Silicon Production
 description: A comparative analysis of Czochralski growth in Semiconductor vs. Solar industries.
 ---
-
-<div class="container" style="max-width: 800px; margin: 0 auto; padding: 60px 20px;">
+<div style="max-width: 800px; margin: 0 auto; padding: 20px;">
 
 # The Production of High-Purity Silicon
 
 The production of high-purity silicon is the bedrock of both the semiconductor and solar industries. While they share a common ancestor in the **Czochralski (CZ)** method, their paths diverge based on the required "perfection" of the crystal.
 
-![Czochralski Process](/assets/images/cz-diagram.png)
+
 
 ## 1. The Core Process: Czochralski (CZ) Growth
 Most silicon crystals are grown using the CZ method. The process involves melting high-purity polysilicon in a quartz crucible, dipping a small seed crystal into the melt, and slowly pulling it upward while rotating.
@@ -33,6 +32,7 @@ The primary difference lies in the tolerance for defects and purity levels. Semi
 | **Crystal Type** | Exclusively Monocrystalline | Mono (CZ) or Multicrystalline (DS) |
 | **Defect Tolerance** | Near-zero dislocations | Some grain boundaries tolerated |
 | **Dopant Control** | Extremely precise (ppb levels) | Less stringent |
+| **Cost Focus** | Performance and reliability | Cost per Watt ($/Wp) |
 
 ---
 
@@ -48,4 +48,10 @@ While high-efficiency solar panels (like TOPCon or HJT) use CZ monocrystalline s
 * **How it works:** Silicon is melted in a large square crucible and cooled from the bottom up.
 * **Result:** Creates multicrystalline ingots. Cheaper and faster, but lower efficiency due to grain boundaries.
 
-</div>
+---
+
+### Technical References
+> * **Zulehner, W. (2000).** *Czochralski Growth of Silicon.* Details the mechanics of oxygen incorporation from quartz crucibles.
+> * **Braga, A. F. B., et al. (2008).** *Solar grade silicon: Challenges and opportunities.* Highlights the transition from 6N to 7N purity.
+> * **Saga, T. (2010).** *Advances in Crystalline Silicon Solar Cell Technology.* Discusses the performance gap between CZ mono-Si and multicrystalline-Si.
+> * **Mullins, J. T. (2021).** *Semiconductor Silicon Crystal Growth.* Overview of the Float-Zone method in power electronics.
