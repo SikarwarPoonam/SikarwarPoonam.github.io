@@ -14,6 +14,5 @@ title: Projects
 <p class="post-meta">Crystal Growth • CZ Method</p>
 <p>A deep dive into Czochralski growth and the divergence between Semiconductor (EGS) and Solar (SoG) grade requirements.</p>
 
-
 ## 2. Photovoltaic Technologies
 *Objective:* Analysis of available and net-gen solar materials/technologies.
