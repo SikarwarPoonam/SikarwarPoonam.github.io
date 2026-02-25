@@ -4,7 +4,6 @@ title: High-Purity Silicon Production
 description: A comparative analysis of Czochralski growth in Semiconductor vs. Solar industries.
 ---
 
-<div class="container" markdown="1">
 
 # The Production of High-Purity Silicon
 
