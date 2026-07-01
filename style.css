@@ -868,6 +868,63 @@ footer {
   line-height: 1.2;
 }
 
+/* Journal Cover Image Box */
+.pub-cover {
+  flex-shrink: 0;
+  width: 82px;
+  height: 112px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pub-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Patent fallback cover styling */
+.pub-cover.patent-cover {
+  background: linear-gradient(135deg, var(--accent-light), rgba(14, 165, 233, 0.15));
+  color: var(--accent);
+  font-size: 2rem;
+  border: 1.5px dashed var(--accent);
+}
+
+.pub-item:hover .pub-cover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.25);
+  border-color: var(--accent);
+}
+
+.pub-item:hover .pub-cover.patent-cover {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), var(--accent-light));
+}
+
+.pub-year-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  background: var(--accent-light);
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-left: 10px;
+  text-transform: none; /* Reset uppercase inherited from .pub-journal */
+  letter-spacing: 0;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  border: 1px solid rgba(14, 165, 233, 0.25);
+}
+
 .pub-content {
   flex: 1;
 }
