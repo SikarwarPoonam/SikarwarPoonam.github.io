@@ -871,8 +871,8 @@ footer {
 /* Journal Cover Image Box */
 .pub-cover {
   flex-shrink: 0;
-  width: 120px;
-  height: 160px;
+  width: 150px;
+  height: 200px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
