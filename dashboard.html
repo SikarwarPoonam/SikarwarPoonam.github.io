@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R&D Lab Dashboard | Abhishek Anand</title>
+  <title>R&D Lab Dashboard | Poonam Sikarwar</title>
   <meta name="description"
-    content="Interactive simulations for Perovskite crystal chemistry, spin-selective PEC water splitting, battery electrochemistry diagnostics, and ML bandgap prediction.">
+    content="Interactive simulations for double perovskite crystal chemistry, photoelectrochemical water splitting, Czochralski silicon ingot growth, and white-light emission.">
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
@@ -36,7 +36,7 @@
 
   <!-- NAV -->
   <nav class="nav">
-    <a href="index.html" class="nav-brand">Abhishek <span>Anand</span></a>
+    <a href="index.html" class="nav-brand">Poonam <span>Sikarwar</span></a>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -53,7 +53,7 @@
     <div class="page-banner-inner">
       <div class="page-tag">Interactive R&D Lab</div>
       <h1>Scientific Simulations</h1>
-      <p>Explore the physical principles, electrochemical diagnostics, and data-driven methods behind my energy materials research. Adjust the parameters below to run real-time physics models.</p>
+      <p>Explore the physical principles, electrochemical cells, and engineering parameters behind my materials and semiconductor research. Adjust the controls to run live simulations.</p>
     </div>
   </div>
 
@@ -187,15 +187,15 @@
     </div>
 
     <!-- ═══════════════════════════════════════════
-         MODULE 2: SPIN-SELECTIVE PEC SPLITTING
+         MODULE 2: SOLAR PEC WATER SPLITTING CELL
     ═══════════════════════════════════════════ -->
     <div class="sim-card reveal" id="pec-sim">
       <div class="sim-card-header">
         <div class="sim-card-title">
           <span class="sim-icon" style="background:rgba(20, 184, 166, 0.12);color:#14b8a6;"><i class="fas fa-sun"></i></span>
           <div>
-            <h3>Spin-Selective PEC Water Splitting</h3>
-            <p>Simulate magnetic-field induced spin alignment of charge carriers to enhance photocurrent in perovskite photoanodes.</p>
+            <h3>Solar PEC Water Splitting Cell (Cs₂AgMCl₆)</h3>
+            <p>Simulate photocurrent density and solar energy conversion efficiency in double perovskite photoanodes.</p>
           </div>
         </div>
       </div>
@@ -203,38 +203,39 @@
         <!-- Controls -->
         <div class="sim-controls">
           <div class="math-formula">
-            $$\eta_{\text{spin}}(B) = 1.0 + 0.16 \cdot \frac{B^2}{B^2 + 500^2}$$
+            $$\eta_{\text{PEC}} = \eta_{\text{theo}} \cdot (1 - e^{-0.7 \cdot I}) \cdot g(\text{Metal})$$
           </div>
           
           <div class="control-group">
             <label for="magnetic-field-slider">
-              Applied Magnetic Field ($B$): 
-              <span class="slider-display"><strong id="magnetic-field-val">0</strong> Gauss</span>
+              Solar Illumination Intensity ($I$): 
+              <span class="slider-display"><strong id="magnetic-field-val">1.0</strong> Suns</span>
             </label>
-            <input type="range" id="magnetic-field-slider" min="0" max="3000" step="50" value="0">
+            <input type="range" id="magnetic-field-slider" min="0.5" max="2.5" step="0.1" value="1.0">
           </div>
 
           <div class="control-group">
-            <label for="recombination-switch">Spin Filter Properties</label>
-            <div class="btn-group">
-              <button class="btn btn-outline active" id="btn-spin-on">Chiral Filter (Active)</button>
-              <button class="btn btn-outline" id="btn-spin-off">Non-Chiral (Standard)</button>
+            <label for="pec-composition">B-Site Metal Selection ($M$)</label>
+            <div class="btn-group" id="pec-composition-group" style="grid-template-columns: repeat(3, 1fr);">
+              <button class="btn btn-outline active" data-comp="Bi">Bi (Bismuth)</button>
+              <button class="btn btn-outline" data-comp="In">In (Indium)</button>
+              <button class="btn btn-outline" data-comp="Sb">Sb (Antimony)</button>
             </div>
           </div>
 
           <!-- Readouts -->
           <div class="readout-box">
             <div class="readout-row">
-              <span class="readout-label">Spin Alignment:</span>
-              <span class="readout-val" id="spin-align-percent">0% Aligned</span>
+              <span class="readout-label">PEC Efficiency ($\eta_{\text{PEC}}$):</span>
+              <span class="readout-val" id="spin-align-percent">0.0%</span>
             </div>
             <div class="readout-row">
-              <span class="readout-label">Carrier Lifetime Extension:</span>
-              <span class="readout-val" id="carrier-lifetime-val">1.0x (Baseline)</span>
+              <span class="readout-label">Theoretical Limit Met:</span>
+              <span class="readout-val" id="carrier-lifetime-val">0% of Limit</span>
             </div>
             <div class="readout-row">
-              <span class="readout-label">Photocurrent Increase:</span>
-              <span class="readout-val text-accent" id="photocurrent-increase-val">+0.0%</span>
+              <span class="readout-label">Photocurrent ($J_{\text{PEC}}$):</span>
+              <span class="readout-val text-accent" id="photocurrent-increase-val">0.0 mA/cm²</span>
             </div>
           </div>
         </div>
@@ -246,29 +247,29 @@
             <div class="canvas-wrapper">
               <canvas id="pec-particles-canvas"></canvas>
             </div>
-            <p class="visual-caption">Aligned spin states prevent spin-forbidden recombination at the perovskite/catalyst junction, letting more holes split water.</p>
+            <p class="visual-caption">Holes split water at the perovskite/electrolyte junction to evolve O₂ gas bubbles, while electrons are collected at the back contact.</p>
           </div>
           <div class="visual-half">
             <div class="visual-header">Photocurrent Density ($J-V$ Curve)</div>
             <div class="canvas-wrapper">
               <canvas id="pec-jv-canvas"></canvas>
             </div>
-            <p class="visual-caption">Photocurrent vs Applied Bias (V vs RHE). Applying a magnetic field increases spin filtering, boosting $J_{\text{PEC}}$ by up to 16%.</p>
+            <p class="visual-caption">Photocurrent density vs. Voltage (V vs. RHE). Maximizing illumination and choosing Sb-doped compositions approaches the 70% theoretical limit.</p>
           </div>
         </div>
       </div>
     </div>
 
     <!-- ═══════════════════════════════════════════
-         MODULE 3: BATTERY EIS DIAGNOSTICS
+         MODULE 3: SILICON INGOT CZ-GROWTH YIELD & RCA
     ═══════════════════════════════════════════ -->
     <div class="sim-card reveal" id="battery-sim">
       <div class="sim-card-header">
         <div class="sim-card-title">
-          <span class="sim-icon" style="background:rgba(16, 185, 129, 0.12);color:#10b981;"><i class="fas fa-battery-three-quarters"></i></span>
+          <span class="sim-icon" style="background:rgba(16, 185, 129, 0.12);color:#10b981;"><i class="fas fa-cubes"></i></span>
           <div>
-            <h3>Electrochemical Impedance Spectroscopy (EIS) & Failure Forensics</h3>
-            <p>Trace battery degradation (SEI growth and charge transfer impedance rise) as a function of temperature and cycle life.</p>
+            <h3>Cz-Silicon Ingot Growth &amp; RCA Tool (Digital Kaizen)</h3>
+            <p>Simulate single-crystal Czochralski growth, target resistivity control, and Loss of Structure (LOS) diagnostics.</p>
           </div>
         </div>
       </div>
@@ -276,41 +277,49 @@
         <!-- Controls -->
         <div class="sim-controls">
           <div class="math-formula">
-            $$Z(\omega) = R_b + \frac{R_{\text{SEI}}}{1 + (i\omega\tau_1)^{\alpha_1}} + \frac{R_{\text{ct}}}{1 + (i\omega\tau_2)^{\alpha_2}}$$
+            $$\text{Resistivity } \rho(L) \propto \frac{1}{\text{Dopant Conc.}}$$
           </div>
 
           <div class="control-group">
             <label for="battery-cycles-slider">
-              Battery Age (Cycle Count): 
-              <span class="slider-display"><strong id="battery-cycles-val">0</strong> cycles</span>
+              Crystal Ingot Length: 
+              <span class="slider-display"><strong id="battery-cycles-val">0</strong> mm</span>
             </label>
-            <input type="range" id="battery-cycles-slider" min="0" max="1000" step="10" value="0">
+            <input type="range" id="battery-cycles-slider" min="0" max="1500" step="10" value="0">
           </div>
 
           <div class="control-group">
             <label for="battery-temp-slider">
-              Cell Temperature: 
-              <span class="slider-display"><strong id="battery-temp-val">25</strong> °C</span>
+              Puller Operating Bias (Heater Deviation): 
+              <span class="slider-display"><strong id="battery-temp-val">100</strong> %</span>
             </label>
-            <input type="range" id="battery-temp-slider" min="-10" max="50" step="1" value="25">
+            <input type="range" id="battery-temp-slider" min="80" max="120" step="1" value="100">
+          </div>
+
+          <div class="control-group">
+            <label for="puller-mode">Cz-Puller Operating Mode</label>
+            <div class="btn-group" id="puller-mode-group" style="grid-template-columns: repeat(2, 1fr);">
+              <button class="btn btn-outline active" data-mode="SOP">Standard SOP</button>
+              <button class="btn btn-outline" data-mode="Trial">Trial Run (Drift)</button>
+            </div>
           </div>
 
           <!-- Readouts -->
           <div class="readout-box">
             <div class="readout-row">
-              <span class="readout-label">Bulk Resistance ($R_b$):</span>
-              <span class="readout-val" id="r-bulk-val">5.00 Ω</span>
+              <span class="readout-label">Estimated Pull Rate:</span>
+              <span class="readout-val" id="r-bulk-val">1.2 mm/min</span>
             </div>
             <div class="readout-row">
-              <span class="readout-label">SEI Resistance ($R_{\text{SEI}}$):</span>
-              <span class="readout-val" id="r-sei-val">2.00 Ω</span>
+              <span class="readout-label">Crystal Resistivity:</span>
+              <span class="readout-val" id="r-sei-val">1.35 Ω·cm</span>
             </div>
             <div class="readout-row">
-              <span class="readout-label">Charge Transfer ($R_{\text{ct}}$):</span>
-              <span class="readout-val" id="r-ct-val">10.00 Ω</span>
+              <span class="readout-label">Target Resistivity Met:</span>
+              <span class="readout-val" id="r-ct-val">Yes (≤1.5 Ω·cm)</span>
             </div>
             <div class="readout-row">
-              <span class="readout-label">State of Health (SoH):</span>
+              <span class="readout-label">Silicon Ingot Yield:</span>
               <span class="readout-val" id="soh-val" style="color:var(--accent-green);font-weight:700;">100.0%</span>
             </div>
           </div>
@@ -319,18 +328,18 @@
         <!-- Visualization -->
         <div class="sim-visual split-visuals">
           <div class="visual-half">
-            <div class="visual-header">Nyquist Plot ($-Z''$ vs $Z'$)</div>
+            <div class="visual-header">Cz-Crystal Growth Chamber</div>
             <div class="canvas-wrapper">
               <canvas id="nyquist-canvas"></canvas>
             </div>
-            <p class="visual-caption">High frequency intercept shifts right ($R_b$), and semicircles expand ($R_{\text{SEI}}$ and $R_{\text{ct}}$) as the cell degrades or freezes.</p>
+            <p class="visual-caption">Real-time simulation of the Czochralski crystal growth. Moving the length slider pulls the single-crystal ingot out of the molten silicon crucible.</p>
           </div>
           <div class="visual-half">
-            <div class="visual-header">Anode Forensics (SEI Layer Growth)</div>
+            <div class="visual-header">RCA LOS Defect Distribution</div>
             <div class="canvas-wrapper">
               <canvas id="forensics-canvas"></canvas>
             </div>
-            <p class="visual-caption">Schematic cross-section of graphite particle showing passivation growth (SEI) and lithium loss over cycles.</p>
+            <p class="visual-caption">Root Cause Analysis (RCA) showing historical distribution of Crown, Body, and Tail Loss of Structure (LOS) events for the selected run parameters.</p>
           </div>
         </div>
       </div>
@@ -344,8 +353,8 @@
         <div class="sim-card-title">
           <span class="sim-icon" style="background:rgba(245, 158, 11, 0.12);color:#f59e0b;"><i class="fas fa-brain"></i></span>
           <div>
-            <h3>ML Perovskite Bandgap & Emission Predictor</h3>
-            <p>Simulate a materials informatics model predicting the optoelectronic properties of Cs<sub>2</sub>NaIn<sub>x</sub>Bi<sub>1−x</sub>Cl<sub>6</sub> double perovskites.</p>
+            <h3>Trivalent Perovskite White-Light Emission Predictor</h3>
+            <p>Predict optoelectronic properties, peak wavelength, and carrier lifetime of Cs₂AgBi₁<sub>−x</sub>In<sub>x</sub>Cl₆ double perovskites.</p>
           </div>
         </div>
       </div>
@@ -358,7 +367,7 @@
           
           <div class="control-group">
             <label for="composition-slider">
-              Indium Fraction ($x$ in Cs₂NaInₓBi₁₋ₓCl₆): 
+              Indium Fraction ($x$ in Cs₂AgBi₁₋ₓInₓCl₆): 
               <span class="slider-display"><strong id="composition-val">0.00</strong></span>
             </label>
             <input type="range" id="composition-slider" min="0" max="1" step="0.05" value="0">
@@ -375,12 +384,12 @@
               <span class="readout-val" id="pred-bandgap-val">1.90 eV</span>
             </div>
             <div class="readout-row">
-              <span class="readout-label">Peak PL Emission:</span>
-              <span class="readout-val" id="pred-wavelength-val">652 nm</span>
+              <span class="readout-label">Peak PL Emission Range:</span>
+              <span class="readout-val" id="pred-wavelength-val">400–750 nm</span>
             </div>
             <div class="readout-row">
-              <span class="readout-label">Octahedral Tilt Angle:</span>
-              <span class="readout-val" id="oct-tilt-val">0.0° (Cubic)</span>
+              <span class="readout-label">Predicted Carrier Lifetime:</span>
+              <span class="readout-val" id="oct-tilt-val">990 ns</span>
             </div>
           </div>
         </div>
@@ -391,7 +400,7 @@
           <div class="canvas-wrapper">
             <canvas id="crystal-glow-canvas"></canvas>
           </div>
-          <p class="visual-caption">Simulated glowing crystal indicating the predicted photoluminescence. Pure Bi has a red-orange emission due to octahedral distortions. Adding Indium widens the bandgap, shifting emission to UV-blue.</p>
+          <p class="visual-caption">Simulated glowing crystal indicating the predicted photoluminescence. Pure Bi has a red-orange emission. Adjusting composition (increasing $x$) broadens and shifts emission into the white light spectrum, matching Patent No. 493546.</p>
         </div>
       </div>
     </div>
@@ -401,7 +410,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <span class="footer-brand">Abhishek Anand</span>
+      <span class="footer-brand">Poonam Sikarwar</span>
       <div class="footer-links">
         <a href="about.html">About</a>
         <a href="research.html">Research</a>
@@ -410,7 +419,7 @@
         <a href="activities.html">Activities</a>
         <a href="contact.html">Contact</a>
       </div>
-      <span class="footer-copy">&copy; 2025 &mdash; IIT Madras / OLA Electric</span>
+      <span class="footer-copy">&copy; 2026 &mdash; IIT Madras</span>
     </div>
   </footer>
 
