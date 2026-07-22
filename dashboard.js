@@ -98,25 +98,25 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     if (baseColor === 'cyan') {
-      grad.addColorStop(0, '#e0f2fe');
-      grad.addColorStop(0.2, '#0ea5e9');
-      grad.addColorStop(0.8, '#0369a1');
-      grad.addColorStop(1, '#0c4a6e');
+      grad.addColorStop(0, '#ccfbf1');
+      grad.addColorStop(0.2, '#14b8a6');
+      grad.addColorStop(0.8, '#0f766e');
+      grad.addColorStop(1, '#115e59');
     } else if (baseColor === 'gold') {
       grad.addColorStop(0, '#fef3c7');
       grad.addColorStop(0.25, '#d97706');
       grad.addColorStop(0.8, '#78350f');
       grad.addColorStop(1, '#451a03');
     } else if (baseColor === 'purple') {
-      grad.addColorStop(0, '#fae8ff');
-      grad.addColorStop(0.25, '#c084fc');
-      grad.addColorStop(0.8, '#6b21a8');
-      grad.addColorStop(1, '#4c1d95');
+      grad.addColorStop(0, '#fce7f3');
+      grad.addColorStop(0.25, '#ec4899');
+      grad.addColorStop(0.8, '#be185d');
+      grad.addColorStop(1, '#9d174d');
     } else if (baseColor === 'purple-A') {
-      grad.addColorStop(0, '#ede9fe');
-      grad.addColorStop(0.25, '#8b5cf6');
-      grad.addColorStop(0.8, '#5b21b6');
-      grad.addColorStop(1, '#3b0764');
+      grad.addColorStop(0, '#e0e7ff');
+      grad.addColorStop(0.25, '#6366f1');
+      grad.addColorStop(0.8, '#4f46e5');
+      grad.addColorStop(1, '#3730a3');
     } else if (baseColor === 'gray') {
       grad.addColorStop(0, '#f8fafc');
       grad.addColorStop(0.25, '#64748b');
@@ -501,11 +501,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.fillStyle = 'rgba(15, 23, 42, 0.05)';
     ctx.fillRect(0, 0, boundaryX, height);
     // Catalyst/Electrolyte layer
-    ctx.fillStyle = 'rgba(14, 165, 233, 0.04)';
+    ctx.fillStyle = 'rgba(20, 184, 166, 0.04)';
     ctx.fillRect(boundaryX, 0, width - boundaryX, height);
 
     // Border line
-    ctx.strokeStyle = 'rgba(14, 165, 233, 0.3)';
+    ctx.strokeStyle = 'rgba(20, 184, 166, 0.3)';
     ctx.lineWidth = 2.5;
     ctx.beginPath();
     ctx.moveTo(boundaryX, 0); ctx.lineTo(boundaryX, height);
@@ -636,8 +636,8 @@ document.addEventListener('DOMContentLoaded', () => {
       b.y += b.vy;
       b.alpha -= 0.005;
 
-      ctx.fillStyle = `rgba(14, 165, 233, ${b.alpha})`;
-      ctx.strokeStyle = `rgba(2, 132, 199, ${b.alpha})`;
+      ctx.fillStyle = `rgba(20, 184, 166, ${b.alpha})`;
+      ctx.strokeStyle = `rgba(15, 118, 110, ${b.alpha})`;
       ctx.lineWidth = 0.8;
       ctx.beginPath();
       ctx.arc(b.x, b.y, b.radius, 0, Math.PI*2);
@@ -717,7 +717,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const alignmentRatio = chiralFilterActive ? (magneticField * magneticField) / (magneticField * magneticField + 600 * 600) : 0;
     const jMultiplier = 1.0 + 0.16 * alignmentRatio;
 
-    ctx.strokeStyle = '#0ea5e9'; // Cyan
+    ctx.strokeStyle = '#14b8a6'; // Teal
     ctx.lineWidth = 3;
     ctx.beginPath();
     for (let v = 0.2; v <= 1.6; v += 0.05) {
@@ -731,7 +731,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const opV = 1.23;
     const opJ = 12 * (1 / (1 + Math.exp(-(opV - 0.85) / 0.16))) * jMultiplier;
 
-    ctx.fillStyle = '#0284c7';
+    ctx.fillStyle = '#0f766e';
     ctx.beginPath();
     ctx.arc(getX(opV), getY(opJ), 5, 0, Math.PI*2);
     ctx.fill();

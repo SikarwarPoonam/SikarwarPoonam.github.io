@@ -45,86 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
   revealEls.forEach(el => io.observe(el));
 
   /* ────────────────────────────────────────────
-     MOLECULAR BACKGROUND ANIMATION
+     FLOATING ATOMS BACKGROUND ANIMATION
   ──────────────────────────────────────────── */
   const canvas = document.getElementById('mol-bg');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  // Molecular templates — chemistry / perovskite motifs
-  const TEMPLATES = [
-    // Benzene / aromatic hexagonal ring
-    {
-      atoms: [
-        { x: 0, y: -48 }, { x: 41, y: -24 }, { x: 41, y: 24 },
-        { x: 0, y: 48 }, { x: -41, y: 24 }, { x: -41, y: -24 }
-      ],
-      bonds: [[0,1,1],[1,2,2],[2,3,1],[3,4,2],[4,5,1],[5,0,2]],
-      radii: [6, 6, 6, 6, 6, 6],
-    },
-    // Perovskite octahedral — MX6 motif (BaZrS3)
-    {
-      atoms: [
-        { x: 0, y: 0 },    // center (Zr)
-        { x: 60, y: 0 },   // right (S)
-        { x: -60, y: 0 },  // left (S)
-        { x: 0, y: 60 },   // bottom (S)
-        { x: 0, y: -60 },  // top (S)
-        { x: 42, y: -42 }, // corner (S)
-        { x: -42, y: 42 }, // corner (S)
-      ],
-      bonds: [[0,1,1],[0,2,1],[0,3,1],[0,4,1],[0,5,1],[0,6,1]],
-      radii: [9, 6, 6, 6, 6, 6, 6],
-    },
-    // Water molecule (H2O)
-    {
-      atoms: [{ x: 0, y: 0 }, { x: 32, y: 26 }, { x: -32, y: 26 }],
-      bonds: [[0,1,1],[0,2,1]],
-      radii: [7, 4, 4],
-    },
-    // Linear double-bond (CO2 / S=C=S)
-    {
-      atoms: [{ x: -55, y: 0 }, { x: 0, y: 0 }, { x: 55, y: 0 }],
-      bonds: [[0,1,2],[1,2,2]],
-      radii: [6, 7, 6],
-    },
-    // Tetrahedral molecule (BaS4 motif)
-    {
-      atoms: [
-        { x: 0, y: 0 },
-        { x: 0, y: -55 },
-        { x: 47, y: 27 },
-        { x: -47, y: 27 },
-      ],
-      bonds: [[0,1,1],[0,2,1],[0,3,1]],
-      radii: [9, 5, 5, 5],
-    },
-    // Chain (polymer segment)
-    {
-      atoms: [
-        { x: -66, y: -20 }, { x: -22, y: 0 }, { x: 22, y: 0 }, { x: 66, y: -20 }
-      ],
-      bonds: [[0,1,1],[1,2,2],[2,3,1]],
-      radii: [5, 7, 7, 5],
-    },
-    // Branched molecule
-    {
-      atoms: [
-        { x: -45, y: 0 }, { x: 0, y: 0 }, { x: 45, y: 0 }, { x: 0, y: -45 }, { x: 0, y: 45 }
-      ],
-      bonds: [[0,1,1],[1,2,1],[1,3,1],[1,4,1]],
-      radii: [5, 9, 5, 5, 5],
-    },
+  // Color options matching the new site style (Indigo, Teal, Rose)
+  const COLOR_PALETTE = [
+    'rgba(99, 102, 241, VAL)',  // indigo
+    'rgba(20, 184, 166, VAL)',  // teal
+    'rgba(236, 72, 153, VAL)'   // rose
   ];
 
-  // Color palette matching site accent
-  const ATOM_COLOR  = 'rgba(14, 165, 233, VAL)';  // cyan
-  const ATOM_COLOR2 = 'rgba(124, 58, 237, VAL)';  // purple
-  const BOND_COLOR  = 'rgba(14, 165, 233, VAL)';
-  const BOND_COLOR2 = 'rgba(124, 58, 237, VAL)';
-
-  let W, H, molecules = [];
-  const MOL_COUNT = 18;
+  let W, H, atoms = [];
+  const ATOM_COUNT = 32;
+  let mouse = { x: null, y: null, active: false };
 
   function resize() {
     W = canvas.width  = window.innerWidth;
@@ -134,117 +70,224 @@ document.addEventListener('DOMContentLoaded', () => {
   function rnd(a, b) { return a + Math.random() * (b - a); }
   function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
-  function createMolecule() {
-    const tpl = pick(TEMPLATES);
-    const useAlt = Math.random() > 0.6;
+  function createAtom() {
+    const radius = rnd(6, 12);
+    const color = pick(COLOR_PALETTE);
+    
+    // Create 1 to 3 electron orbits
+    const numOrbits = Math.floor(rnd(1, 4));
+    const orbits = [];
+    for (let i = 0; i < numOrbits; i++) {
+      orbits.push({
+        rx: radius * rnd(2.0, 3.5),
+        ry: radius * rnd(0.8, 1.6),
+        angle: rnd(0, Math.PI * 2),
+        speed: rnd(0.015, 0.04) * (Math.random() > 0.5 ? 1 : -1),
+        currentAngle: rnd(0, Math.PI * 2),
+        electronRadius: rnd(1.8, 3.0)
+      });
+    }
+
     return {
-      tpl,
       x: rnd(0, W),
       y: rnd(0, H),
-      vx: rnd(-0.22, 0.22),
-      vy: rnd(-0.18, 0.18),
-      angle: rnd(0, Math.PI * 2),
-      omega: rnd(-0.003, 0.003),  // rotation speed
-      scale: rnd(0.6, 1.1),
-      alpha: rnd(0.10, 0.20),
-      atomColor: useAlt ? ATOM_COLOR2 : ATOM_COLOR,
-      bondColor: useAlt ? BOND_COLOR2 : BOND_COLOR,
+      vx: rnd(-0.25, 0.25),
+      vy: rnd(-0.25, 0.25),
+      baseVx: 0,
+      baseVy: 0,
+      radius,
+      color,
+      orbits,
+      alpha: rnd(0.12, 0.22)
     };
   }
 
   function init() {
     resize();
-    molecules = Array.from({ length: MOL_COUNT }, createMolecule);
+    atoms = Array.from({ length: ATOM_COUNT }, createAtom);
+    
+    // Store original velocities as base velocities
+    atoms.forEach(a => {
+      a.baseVx = a.vx;
+      a.baseVy = a.vy;
+    });
   }
 
-  function drawMolecule(m) {
-    const { tpl, x, y, angle, scale, alpha, atomColor, bondColor } = m;
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(angle);
-    ctx.scale(scale, scale);
+  // Mouse event listeners
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    mouse.active = true;
+  });
 
-    // Draw bonds
-    tpl.bonds.forEach(([i, j, order]) => {
-      const a = tpl.atoms[i], b = tpl.atoms[j];
-      const dx = b.x - a.x, dy = b.y - a.y;
-      const len = Math.sqrt(dx*dx + dy*dy);
-      const nx = -dy / len, ny = dx / len; // normal
+  window.addEventListener('mouseleave', () => {
+    mouse.active = false;
+  });
 
-      const bAlpha = alpha * 0.7;
-      ctx.strokeStyle = bondColor.replace('VAL', bAlpha);
-      ctx.lineCap = 'round';
+  function drawAtom(a) {
+    const { x, y, radius, color, orbits, alpha } = a;
 
-      if (order === 2) {
-        // Draw two parallel lines
-        const offset = 3.5;
-        for (let s of [-1, 1]) {
-          ctx.lineWidth = 1.8;
-          ctx.beginPath();
-          ctx.moveTo(a.x + nx * offset * s, a.y + ny * offset * s);
-          ctx.lineTo(b.x + nx * offset * s, b.y + ny * offset * s);
-          ctx.stroke();
-        }
+    // 1. Draw orbitals & electrons
+    orbits.forEach(o => {
+      // Draw faint orbit ellipse
+      ctx.beginPath();
+      if (ctx.ellipse) {
+        ctx.ellipse(x, y, o.rx, o.ry, o.angle, 0, Math.PI * 2);
       } else {
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
+        // Fallback for older browsers
+        ctx.arc(x, y, o.rx, 0, Math.PI * 2);
       }
+      ctx.strokeStyle = color.replace('VAL', alpha * 0.15);
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+
+      // Update electron angle
+      // If mouse is active and near, speed up the electron slightly for interactive feel
+      let currentSpeed = o.speed;
+      if (mouse.active) {
+        const dx = mouse.x - x;
+        const dy = mouse.y - y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 180) {
+          currentSpeed = o.speed * (2.0 - dist / 180);
+        }
+      }
+      o.currentAngle += currentSpeed;
+
+      // Calculate electron position on the rotated ellipse
+      const ex = o.rx * Math.cos(o.currentAngle);
+      const ey = o.ry * Math.sin(o.currentAngle);
+      const cosA = Math.cos(o.angle);
+      const sinA = Math.sin(o.angle);
+      const rotX = x + ex * cosA - ey * sinA;
+      const rotY = y + ex * sinA + ey * cosA;
+
+      // Electron core
+      ctx.fillStyle = color.replace('VAL', alpha * 0.95);
+      ctx.beginPath();
+      ctx.arc(rotX, rotY, o.electronRadius, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Electron glow
+      const eGlow = ctx.createRadialGradient(rotX, rotY, 0, rotX, rotY, o.electronRadius * 2);
+      eGlow.addColorStop(0, color.replace('VAL', alpha * 0.5));
+      eGlow.addColorStop(1, color.replace('VAL', 0));
+      ctx.fillStyle = eGlow;
+      ctx.beginPath();
+      ctx.arc(rotX, rotY, o.electronRadius * 2, 0, Math.PI * 2);
+      ctx.fill();
     });
 
-    // Draw atoms
-    tpl.atoms.forEach((a, idx) => {
-      const r = (tpl.radii ? tpl.radii[idx] : 6);
-      // Outer glow
-      const glow = ctx.createRadialGradient(a.x, a.y, 0, a.x, a.y, r * 2.2);
-      glow.addColorStop(0, atomColor.replace('VAL', alpha * 0.5));
-      glow.addColorStop(1, atomColor.replace('VAL', 0));
-      ctx.fillStyle = glow;
-      ctx.beginPath();
-      ctx.arc(a.x, a.y, r * 2.2, 0, Math.PI * 2);
-      ctx.fill();
+    // 2. Draw nucleus
+    // Outer nucleus glow
+    const nucleusGlow = ctx.createRadialGradient(x, y, 0, x, y, radius * 2.5);
+    nucleusGlow.addColorStop(0, color.replace('VAL', alpha * 0.5));
+    nucleusGlow.addColorStop(0.4, color.replace('VAL', alpha * 0.2));
+    nucleusGlow.addColorStop(1, color.replace('VAL', 0));
+    ctx.fillStyle = nucleusGlow;
+    ctx.beginPath();
+    ctx.arc(x, y, radius * 2.5, 0, Math.PI * 2);
+    ctx.fill();
 
-      // Core atom circle
-      ctx.fillStyle = atomColor.replace('VAL', alpha);
-      ctx.beginPath();
-      ctx.arc(a.x, a.y, r, 0, Math.PI * 2);
-      ctx.fill();
+    // Nucleus core
+    const nucleusCore = ctx.createRadialGradient(x - radius * 0.2, y - radius * 0.2, 0, x, y, radius);
+    nucleusCore.addColorStop(0, '#ffffff');
+    nucleusCore.addColorStop(0.2, color.replace('VAL', alpha * 0.95));
+    nucleusCore.addColorStop(1, color.replace('VAL', alpha * 0.7));
+    ctx.fillStyle = nucleusCore;
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.fill();
 
-      // Highlight
-      ctx.fillStyle = atomColor.replace('VAL', alpha * 0.5);
-      ctx.beginPath();
-      ctx.arc(a.x - r * 0.25, a.y - r * 0.25, r * 0.35, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
-    ctx.restore();
+    // Nucleus border
+    ctx.strokeStyle = color.replace('VAL', alpha * 0.3);
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.stroke();
   }
 
   function loop() {
     ctx.clearRect(0, 0, W, H);
 
-    molecules.forEach(m => {
-      drawMolecule(m);
+    // Update positions and velocities
+    atoms.forEach(a => {
+      // Mouse interaction (repulsion)
+      if (mouse.active) {
+        const dx = a.x - mouse.x;
+        const dy = a.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const effectDist = 180;
+        
+        if (dist < effectDist) {
+          const force = (effectDist - dist) / effectDist;
+          const angle = Math.atan2(dy, dx);
+          const push = force * 0.45;
+          a.vx += Math.cos(angle) * push;
+          a.vy += Math.sin(angle) * push;
+        } else {
+          a.vx += (a.baseVx - a.vx) * 0.04;
+          a.vy += (a.baseVy - a.vy) * 0.04;
+        }
+      } else {
+        a.vx += (a.baseVx - a.vx) * 0.02;
+        a.vy += (a.baseVy - a.vy) * 0.02;
+      }
 
-      // Update position & rotation
-      m.x += m.vx;
-      m.y += m.vy;
-      m.angle += m.omega;
+      // Limit speed
+      const speed = Math.sqrt(a.vx * a.vx + a.vy * a.vy);
+      const maxSpeed = 1.8;
+      if (speed > maxSpeed) {
+        a.vx = (a.vx / speed) * maxSpeed;
+        a.vy = (a.vy / speed) * maxSpeed;
+      }
 
-      // Wrap around edges with padding
-      const pad = 120;
-      if (m.x < -pad) m.x = W + pad;
-      if (m.x > W + pad) m.x = -pad;
-      if (m.y < -pad) m.y = H + pad;
-      if (m.y > H + pad) m.y = -pad;
+      a.x += a.vx;
+      a.y += a.vy;
+
+      // Wrap around edges
+      const pad = 60;
+      if (a.x < -pad) a.x = W + pad;
+      if (a.x > W + pad) a.x = -pad;
+      if (a.y < -pad) a.y = H + pad;
+      if (a.y > H + pad) a.y = -pad;
     });
+
+    // Draw lines between nearby atoms (bonding energy field)
+    for (let i = 0; i < atoms.length; i++) {
+      for (let j = i + 1; j < atoms.length; j++) {
+        const a1 = atoms[i];
+        const a2 = atoms[j];
+        const dx = a2.x - a1.x;
+        const dy = a2.y - a1.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const bondDist = 130;
+
+        if (dist < bondDist) {
+          const avgAlpha = (a1.alpha + a2.alpha) / 2;
+          const strength = (1 - dist / bondDist) * avgAlpha * 0.35;
+          ctx.beginPath();
+          ctx.moveTo(a1.x, a1.y);
+          ctx.lineTo(a2.x, a2.y);
+          ctx.strokeStyle = a1.color.replace('VAL', strength);
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    atoms.forEach(drawAtom);
 
     requestAnimationFrame(loop);
   }
 
   init();
   loop();
-  window.addEventListener('resize', () => resize());
+  window.addEventListener('resize', () => {
+    resize();
+    atoms.forEach(a => {
+      if (a.x > W) a.x = rnd(0, W);
+      if (a.y > H) a.y = rnd(0, H);
+    });
+  });
 });

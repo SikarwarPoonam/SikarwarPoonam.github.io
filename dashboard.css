@@ -22,7 +22,7 @@
 
 .sim-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.08);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.08);
 }
 
 /* Header */
@@ -99,7 +99,7 @@
 /* Mathematical Formula Panel */
 .math-formula {
   background: #0f172a;
-  color: #38bdf8;
+  color: #a5b4fc;
   padding: 14px 18px;
   border-radius: var(--radius);
   font-family: 'Courier New', Courier, monospace;
@@ -153,7 +153,7 @@ select {
 
 select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
 /* Range Inputs */
@@ -177,7 +177,7 @@ input[type="range"]::-webkit-slider-thumb {
   background: var(--accent);
   cursor: pointer;
   transition: transform 0.1s ease, background-color var(--transition);
-  box-shadow: 0 2px 6px rgba(14,165,233,0.3);
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.3);
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {

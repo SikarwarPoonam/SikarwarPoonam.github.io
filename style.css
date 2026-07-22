@@ -2,24 +2,24 @@
    DESIGN SYSTEM
 ======================================== */
 :root {
-  --bg: #f0f8ff;
-  --bg-soft: #e8f4fd;
+  --bg: #f8fafc;
+  --bg-soft: #f1f5f9;
   --bg-card: #ffffff;
   --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-  --accent: #0ea5e9;
-  --accent-dark: #0284c7;
-  --accent-light: #e0f2fe;
-  --accent-purple: #7c3aed;
-  --accent-green: #059669;
-  --accent-yellow: #d97706;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+  --accent-light: #e0e7ff;
+  --accent-purple: #ec4899;
+  --accent-green: #14b8a6;
+  --accent-yellow: #f59e0b;
   --border: #e2e8f0;
   --nav-height: 70px;
   --radius: 12px;
   --radius-lg: 20px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  --shadow-hover: 0 12px 40px rgba(14, 165, 233, 0.15);
+  --shadow-hover: 0 12px 40px rgba(99, 102, 241, 0.15);
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
