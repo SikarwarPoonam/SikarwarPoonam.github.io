@@ -2,16 +2,13 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Poonam Sikarwar</title>
   <meta name="description"
-    content="Materials scientist and electrochemist with a Ph.D. from IIT Madras. Expertise in halide perovskites, solar water splitting, silicon crystal growth, and machine learning.">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    content="Academic background, research trajectory, work experience, and core competencies of Dr. Poonam Sikarwar.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
@@ -20,282 +17,292 @@
   <canvas id="mol-bg"></canvas>
   <div class="page-transition"></div>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="index.html" class="nav-brand">Poonam <span>Sikarwar</span></a>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="dashboard.html">R&D Lab</a></li>
-      <li><a href="activities.html">Activities</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- PAGE BANNER -->
-  <div class="page-banner">
-    <div class="page-banner-inner">
-      <div class="page-tag">Biography</div>
-      <h1>Academic & Industrial Journey</h1>
-      <p>Materials scientist bridging the gap between molecular design of perovskites and production-floor silicon manufacturing.</p>
-    </div>
+  <!-- FLOATING GLASS NAVIGATION BAR -->
+  <div class="nav-wrapper">
+    <nav class="nav">
+      <a href="index.html" class="nav-brand">Poonam <span>Sikarwar</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
   </div>
 
-  <!-- ABOUT CONTENT -->
-  <div class="section">
-    <div class="about-grid">
+  <!-- MOBILE OVERLAY MENU -->
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-      <!-- PROFILE CARD -->
-      <div class="profile-card reveal">
-        <img class="profile-img" src="images/profile1.jpg" alt="Poonam Sikarwar">
-        <div class="profile-info">
-          <h2>Poonam Sikarwar</h2>
-          <div class="title">Materials Scientist & Electrochemist</div>
-          <div class="profile-links">
-            <a href="mailto:poonamsikarwar.iitm@gmail.com" class="profile-link">
-              <i class="fas fa-envelope"></i> poonamsikarwar.iitm@gmail.com
-            </a>
-            <a href="https://www.linkedin.com" target="_blank" class="profile-link">
-              <i class="fab fa-linkedin"></i> LinkedIn Profile
-            </a>
-            <a href="https://scholar.google.com" target="_blank" class="profile-link">
-              <i class="fas fa-graduation-cap"></i> Google Scholar
-            </a>
-            <a href="https://www.iitm.ac.in" target="_blank" class="profile-link">
-              <i class="fas fa-university"></i> IIT Madras
-            </a>
-          </div>
-          <a href="CV_Poonam_Sikarwar.pdf" download class="btn btn-primary"
-            style="width: 100%; justify-content: center; margin-top: 20px;">
-            <i class="fas fa-download"></i> Download CV
-          </a>
-        </div>
-      </div>
-
-      <!-- BIO -->
-      <div class="bio-section reveal">
-        <h3>Background</h3>
-        <p class="bio-text">
-          I am a materials scientist and electrochemist with comprehensive experience spanning academic research and industrial semiconductor engineering. I completed my direct Ph.D. (MS + Ph.D.) in Chemical Engineering from the Indian Institute of Technology Madras, with a core focus on the design of semiconducting perovskite halides and their applications in optoelectronic devices.
-        </p>
-
-        <p class="bio-text">
-          My academic work involves synthesizing lead-free halide double perovskite compositions, engineering octahedral distortions to achieve broadband white-light emission, and fabricating solar-driven photoelectrochemical water splitting cells. This research has led to a granted Indian patent and first-author publications in peer-reviewed journals such as <i>Commun Mater (Nature)</i>, <i>Physical Review Applied</i>, and <i>Inorganic Chemistry</i>.
-        </p>
-        <p class="bio-text">
-          Transitioning to industrial R&D, I worked as a Quantitative Silicon Researcher in the Ingot and Wafer Technology Group at Reliance New Energy Limited. There, I applied machine learning and simulation models (using Python and FlexSim) directly on live Czochralski crystal growth production floors to build digital twins, classify wafer defects, and detect loss-of-structure (LOS) anomalies in real time.
-        </p>
-        <p class="bio-text">
-          I am passionate about combining fundamental materials chemistry with computational modeling and machine learning to accelerate sustainable energy technologies. I thrive in collaborative environments where I can mentor junior researchers and design innovative device pathways.
-        </p>
-
-        <h3>Education</h3>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"><img src="images/iitm-logo.png" alt="IIT Madras Logo"></div>
-
-            <div class="timeline-body">
-              <h4>
-                Direct Ph.D. (MS + Ph.D.) - Chemical Engineering
-                <span class="timeline-duration">July 2017 – Mar 2024</span>
-              </h4>
-
-              <div class="place">IIT Madras, Chennai, India | CGPA: 8.07</div>
-
-              <p class="thesis">
-                <strong>Thesis Title:</strong> Design of Semiconducting Perovskite Halides and their Application in Optoelectronic Devices.
+  <!-- PAGE HEADER -->
+  <section class="section" style="padding-top: 9rem; padding-bottom: 2rem;">
+    <div class="container">
+      
+      <!-- BENTO HEADER HERO -->
+      <div class="bento-card reveal" style="padding: 2.5rem;">
+        <div class="hero-grid" style="align-items: center; gap: 2rem;">
+          <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+            <img src="images/profile1.jpg" alt="Poonam Sikarwar" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-cyan); box-shadow: var(--shadow-glow-cyan);">
+            <div>
+              <span class="badge" style="margin-bottom: 0.5rem;">Materials Scientist &amp; Electrochemist</span>
+              <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 0.25rem;">Dr. Poonam Sikarwar</h1>
+              <p style="color: var(--accent-cyan); font-weight: 600; font-size: 1rem; margin-bottom: 0.75rem;">
+                Direct Ph.D. (Chemical Engineering) &bull; Indian Institute of Technology Madras
               </p>
-
-              <p class="advisor">
-                <strong>Advisor:</strong> Prof. Aravind Kumar Chandiran
-              </p>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fas fa-envelope text-cyan"></i> poonamsikarwar.iitm@gmail.com</span>
+                <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fas fa-phone text-cyan"></i> (+91) 9123506748</span>
+                <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fas fa-location-dot text-cyan"></i> IIT Madras, Chennai, India</span>
+              </div>
             </div>
           </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"><i class="fas fa-graduation-cap" style="color:var(--accent);"></i></div>
-
-            <div class="timeline-body">
-              <h4>
-                Bachelor of Technology - Chemical Engineering
-                <span class="timeline-duration">Jul 2010 – May 2014</span>
-              </h4>
-
-              <div class="place">Institute of Technology & Management, Gwalior, India | CGPA: 8.38</div>
-
-              <p class="thesis">
-                <strong>Dissertation Title:</strong> Lemongrass oil extraction through hydro-distillation and microwave assisted distillation and its physiochemical property analysis.
-              </p>
-            </div>
+          <div style="display: flex; justify-content: flex-end; align-items: center;">
+            <a href="CV_Poonam_Sikarwar.pdf" download class="btn btn-primary"><i class="fas fa-download"></i> Download Full CV (PDF)</a>
           </div>
-        </div>
-
-        <h3>Professional Experience</h3>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot" style="font-size: 0.65rem;"><i class="fas fa-industry" style="color:var(--accent-green)"></i></div>
-            <div class="timeline-body">
-              <h4>Quantitative Silicon Researcher
-                <span class="timeline-duration">July 2025 – April 2026</span>
-              </h4>
-              <div class="place">Reliance New Energy Limited, Ingot and Wafer Technology Group, Bangalore, India</div>
-
-              <p>Worked on a live Czochralski crystal growth production floor. Built mathematical models for crystal resistivity and dopant concentration, developed Python/FlexSim digital twins, designed 100+ hot-zone components in AutoCAD, and engineered a machine learning classifier for real-time loss-of-structure (LOS) detection.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot" style="font-size: 0.65rem;"><img src="images/iitm-logo.png" alt="IIT Madras Logo"></div>
-            <div class="timeline-body">
-              <h4>Doctoral Assistant
-                <span class="timeline-duration">Sep 2020 – Jun 2025</span>
-              </h4>
-              <div class="place">IIT Madras, Chennai, India</div>
-              <p>Synthesized lead-free halide double perovskite compositions. Developed a broadband light-emitting single-semiconductor white-light emitting material (leading to Indian Patent No. 493546). Fabricated photoelectrochemical cells for solar water splitting (achieving ~70% of theoretical efficiency limit).</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot" style="font-size: 0.65rem;"><i class="fas fa-university" style="color:var(--accent-purple)"></i></div>
-            <div class="timeline-body">
-              <h4>Junior Research Fellow
-                <span class="timeline-duration">Dec 2015 – Dec 2016</span>
-              </h4>
-              <div class="place">IIT Roorkee, Roorkee, India</div>
-              <p>Conducted research on the adsorption of arsenic and fluoride from groundwater onto laterite soil and its stabilization in clay bricks.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot" style="font-size: 0.65rem;"><i class="fas fa-briefcase" style="color:var(--accent-yellow)"></i></div>
-            <div class="timeline-body">
-              <h4>Quality Control Intern (F&B Sector)
-                <span class="timeline-duration">Jun 2013 – Jul 2013</span>
-              </h4>
-              <div class="place">Mondeléz International - Cadbury, Malanpur, India</div>
-              <p>Assisted in quality control protocols during new product development processes.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot" style="font-size: 0.65rem;"><i class="fas fa-briefcase" style="color:var(--accent-yellow)"></i></div>
-            <div class="timeline-body">
-              <h4>Industrial Intern (Cement Plant)
-                <span class="timeline-duration">Jul 2013 – Aug 2013</span>
-              </h4>
-              <div class="place">Heidelberg Cement, Jabalpur, India</div>
-              <p>Conducted physiochemical property analysis and quality control of Diamond Cement.</p>
-            </div>
-          </div>
-        </div>
-
-        <h3>Technical Expertise</h3>
-
-        <div class="expertise-section">
-
-          <h4><i class="fas fa-flask"></i> Synthesis & Fabrication</h4>
-          <div class="tags">
-            <span class="tag">Single Crystals</span>
-            <span class="tag">Nanostructured Powders</span>
-            <span class="tag">Thin Films</span>
-            <span class="tag">Hydrothermal Synthesis</span>
-            <span class="tag">Sol-Gel</span>
-            <span class="tag">Solid-State Synthesis</span>
-            <span class="tag">Co-precipitation</span>
-            <span class="tag">Spin Coating</span>
-            <span class="tag">Doctor Blading</span>
-            <span class="tag">Electrochemical Deposition</span>
-            <span class="tag">CVD / PVD</span>
-            <span class="tag">Czochralski (Cz) Growth</span>
-          </div>
-
-          <h4><i class="fas fa-microscope"></i> Structural & Characterization</h4>
-          <div class="tags">
-            <span class="tag">SCXRD</span>
-            <span class="tag">PXRD</span>
-            <span class="tag">AFM</span>
-            <span class="tag">PFM (Piezo-Force Imaging)</span>
-            <span class="tag">SECM</span>
-            <span class="tag">EDS</span>
-          </div>
-
-          <h4><i class="fas fa-wave-square"></i> Spectroscopy</h4>
-          <div class="tags">
-            <span class="tag">XPS</span>
-            <span class="tag">FTIR</span>
-            <span class="tag">Raman</span>
-            <span class="tag">UV-Vis</span>
-            <span class="tag">Photoluminescence (PL)</span>
-            <span class="tag">TRPL (Time-Resolved PL)</span>
-            <span class="tag">Confocal Fluorescence</span>
-            <span class="tag">In-situ PL (Temp/Voltage)</span>
-            <span class="tag">ICP-MS/OES</span>
-            <span class="tag">GC-MS</span>
-          </div>
-
-          <h4><i class="fas fa-bolt"></i> Electrochemical & Dielectric</h4>
-          <div class="tags">
-            <span class="tag">EIS (Impedance Spectroscopy)</span>
-            <span class="tag">Cyclic Voltammetry (CV)</span>
-            <span class="tag">LSV</span>
-            <span class="tag">GCD/PCD</span>
-            <span class="tag">Dielectric Spectroscopy</span>
-          </div>
-
-          <h4><i class="fas fa-code"></i> Computation & Data</h4>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Matplotlib</span>
-            <span class="tag">SciPy</span>
-            <span class="tag">Plotly</span>
-            <span class="tag">Streamlit</span>
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Scikit-learn</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag">PyTorch</span>
-            <span class="tag">MATLAB</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Tableau</span>
-            <span class="tag">Power BI</span>
-          </div>
-
-          <h4><i class="fas fa-tools"></i> Engineering & Lab Software</h4>
-          <div class="tags">
-            <span class="tag">AutoCAD</span>
-            <span class="tag">FlexSim (Digital Twin)</span>
-            <span class="tag">SolidWorks</span>
-            <span class="tag">VESTA</span>
-            <span class="tag">CASA XPS</span>
-            <span class="tag">Z-View</span>
-            <span class="tag">EC-Lab</span>
-            <span class="tag">Origin</span>
-          </div>
-
         </div>
       </div>
 
     </div>
-  </div>
+  </section>
+
+  <!-- BIOGRAPHY NARRATIVE -->
+  <section class="section">
+    <div class="container">
+      <div class="bento-card reveal" style="padding: 2.5rem;">
+        <span class="badge badge-indigo" style="margin-bottom: 1rem;">Research Summary</span>
+        <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Bridging Fundamental Optoelectronics with Industrial Semiconductor Fab Systems</h2>
+        
+        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem;">
+          Materials scientist and electrochemist with deep expertise in 3D and low-dimensional halide perovskites, photoelectrochemical water splitting, light-emitting materials, and silicon crystal growth processes. Research interests include interfacial charge transfer, defect engineering, ML-assisted perovskite material discovery, and structure-property relationships in functional energy materials.
+        </p>
+        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
+          Experienced in materials synthesis, device fabrication, advanced spectroscopy, electrochemical characterization, and silicon loss-of-structure (LOS) analysis, with a strong focus on developing sustainable energy conversion and storage technologies for academic and industrial clean energy applications.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & EDUCATION TIMELINES -->
+  <section class="section">
+    <div class="container">
+      <div class="bento-grid">
+        
+        <!-- WORK EXPERIENCE -->
+        <div class="bento-card span-6 reveal">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem;">
+            <div style="width: 42px; height: 42px; border-radius: 12px; background: rgba(6, 182, 212, 0.12); color: var(--accent-cyan); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; font-weight: 700;">Professional Experience</h3>
+          </div>
+
+          <div class="timeline">
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">July 2025 – April 2026</div>
+                <h4 class="timeline-title">Quantitative Silicon Researcher</h4>
+                <div class="timeline-place">Reliance New Energy Limited &bull; Ingot &amp; Wafer Technology Group</div>
+                <div class="timeline-desc">
+                  Simulated Czochralski single-crystal silicon growth, thermal hot-zone component design (100+ AutoCAD parts), and real-time loss-of-structure (LOS) predictive models for production yield optimization.
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">Sep 2020 – Jun 2025</div>
+                <h4 class="timeline-title">Doctoral Assistant &amp; Teaching Fellow</h4>
+                <div class="timeline-place">IIT Madras &bull; Group of Prof. Aravind Kumar Chandiran</div>
+                <div class="timeline-desc">
+                  Led synthesis and characterization of lead-free double perovskite semiconductors, solar water oxidation cells, and advanced FTIR/PXRD spectroscopy labs.
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">Dec 2015 – Dec 2016</div>
+                <h4 class="timeline-title">Junior Research Fellow (JRF)</h4>
+                <div class="timeline-place">IIT Roorkee &bull; Group of Prof. Prasenjit Mondal</div>
+                <div class="timeline-desc">
+                  Engineered groundwater purification protocols utilizing local laterite soil adsorption for Arsenic and Fluoride removal.
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2013 – 2014</div>
+                <h4 class="timeline-title">Graduate Apprenticeships</h4>
+                <div class="timeline-place">Mondelēz International &amp; Heidelberg Cement</div>
+                <div class="timeline-desc">
+                  Industrial process training in quality control labs, chemical processing lines, and material standards.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="bento-card span-6 reveal">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem;">
+            <div style="width: 42px; height: 42px; border-radius: 12px; background: rgba(99, 102, 241, 0.12); color: var(--accent-indigo); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; font-weight: 700;">Education &amp; Credentials</h3>
+          </div>
+
+          <div class="timeline">
+            
+            <div class="timeline-item">
+              <div class="timeline-dot" style="border-color: var(--accent-indigo); box-shadow: 0 0 10px var(--accent-indigo);"></div>
+              <div class="timeline-content">
+                <div class="timeline-date" style="color: var(--accent-indigo);">July 2017 – March 2024</div>
+                <h4 class="timeline-title">Direct Ph.D. (M.S. + Ph.D.) — Chemical Engineering</h4>
+                <div class="timeline-place">Indian Institute of Technology Madras, India &bull; CGPA: 8.07</div>
+                <div class="timeline-desc">
+                  <strong>Thesis:</strong> Octahedral Distortion and Dimensional Tuning in Lead-Free Halide Double Perovskites for Light Emission and Photoelectrochemical Applications.<br>
+                  <strong>Advisor:</strong> Prof. Aravind Kumar Chandiran
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot" style="border-color: var(--accent-indigo); box-shadow: 0 0 10px var(--accent-indigo);"></div>
+              <div class="timeline-content">
+                <div class="timeline-date" style="color: var(--accent-indigo);">July 2010 – May 2014</div>
+                <h4 class="timeline-title">B.Tech — Chemical Engineering</h4>
+                <div class="timeline-place">ITM India &bull; CGPA: 8.38</div>
+                <div class="timeline-desc">
+                  First Class with Distinction. Core coursework in Reaction Engineering, Thermodynamics, Transport Phenomena, and Process Control.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS MATRIX -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Technical Competencies</span>
+        <h2>Skills &amp; Methodologies</h2>
+        <p>Comprehensive toolkit spanning laboratory synthesis, characterization, and computational tools.</p>
+      </div>
+
+      <div class="bento-grid">
+        
+        <div class="bento-card span-4 reveal">
+          <div class="skills-group">
+            <h4><i class="fas fa-vial"></i> Synthesis &amp; Materials</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">3D Halide Perovskites</span>
+              <span class="skill-tag">2D Layered Perovskites</span>
+              <span class="skill-tag">Double Perovskites</span>
+              <span class="skill-tag">Sol-Gel Synthesis</span>
+              <span class="skill-tag">Hydrothermal Methods</span>
+              <span class="skill-tag">Thin-Film Deposition</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card span-4 reveal">
+          <div class="skills-group">
+            <h4><i class="fas fa-microscope"></i> Spectroscopy &amp; Characterization</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Powder XRD (PXRD)</span>
+              <span class="skill-tag">Single Crystal XRD (SCXRD)</span>
+              <span class="skill-tag">FTIR Spectroscopy</span>
+              <span class="skill-tag">TRPL Spectroscopy</span>
+              <span class="skill-tag">PLQY Measurements</span>
+              <span class="skill-tag">UV-Vis Spectroscopy</span>
+              <span class="skill-tag">PFM &amp; FE-SEM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card span-4 reveal">
+          <div class="skills-group">
+            <h4><i class="fas fa-bolt"></i> Electrochemistry &amp; Solar</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">PEC Cell Engineering</span>
+              <span class="skill-tag">Solar Water Oxidation</span>
+              <span class="skill-tag">Photocurrent J-V Curves</span>
+              <span class="skill-tag">EIS Spectroscopy</span>
+              <span class="skill-tag">Mott-Schottky Analysis</span>
+              <span class="skill-tag">Cyclic Voltammetry</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card span-6 reveal">
+          <div class="skills-group">
+            <h4><i class="fas fa-code"></i> AI, ML &amp; Programming</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">CNNs &amp; ResNet</span>
+              <span class="skill-tag">Grad-CAM Visuals</span>
+              <span class="skill-tag">Python (NumPy, SciPy)</span>
+              <span class="skill-tag">MATLAB</span>
+              <span class="skill-tag">Defect Analytics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card span-6 reveal">
+          <div class="skills-group">
+            <h4><i class="fas fa-industry"></i> Industrial &amp; Engineering Software</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">AutoCAD Hot-Zone Design</span>
+              <span class="skill-tag">Cz-Silicon Growth Twins</span>
+              <span class="skill-tag">Digital Kaizen (RCA)</span>
+              <span class="skill-tag">Loss of Structure (LOS)</span>
+              <span class="skill-tag">OriginLab Data Analysis</span>
+              <span class="skill-tag">Six Sigma Yellow Belt</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-inner">
-      <span class="footer-brand">Poonam Sikarwar</span>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="dashboard.html">R&D Lab</a>
-        <a href="activities.html">Activities</a>
-        <a href="contact.html">Contact</a>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-brand">Poonam Sikarwar</span>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <span class="footer-copy">&copy; 2026 &mdash; IIT Madras</span>
       </div>
-      <span class="footer-copy">&copy; 2026 &mdash; IIT Madras</span>
     </div>
   </footer>
+
 </body>
 
 </html>

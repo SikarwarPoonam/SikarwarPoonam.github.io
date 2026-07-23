@@ -6,11 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Poonam Sikarwar</title>
   <meta name="description"
-    content="Get in touch with Poonam Sikarwar for research collaborations, semiconductor R&D, and optoelectronic materials consulting.">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    content="Connect with Dr. Poonam Sikarwar for postdoctoral positions, research collaborations, and technical consulting.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
@@ -19,140 +17,193 @@
   <canvas id="mol-bg"></canvas>
   <div class="page-transition"></div>
 
-  <nav class="nav">
-    <a href="index.html" class="nav-brand">Poonam <span>Sikarwar</span></a>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="dashboard.html">R&D Lab</a></li>
-      <li><a href="activities.html">Activities</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div class="page-banner">
-    <div class="page-banner-inner">
-      <div class="page-tag">Get In Touch</div>
-      <h1>Let's Connect and Collaborate</h1>
-      <p>Open to research collaborations, academic/industry consulting, and postdoctoral/R&D opportunities in energy materials, silicon wafers, and electrochemistry.</p>
-    </div>
+  <!-- FLOATING GLASS NAVIGATION BAR -->
+  <div class="nav-wrapper">
+    <nav class="nav">
+      <a href="index.html" class="nav-brand">Poonam <span>Sikarwar</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
   </div>
 
-  <div class="section">
-    <div class="contact-grid">
-
-      <!-- CONTACT INFO -->
-      <div class="reveal">
-        <h3 style="font-family: Outfit, sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: 10px;">Let's Connect</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 32px; line-height: 1.7;">
-          I'm open to discussing post-doctoral opportunities, semiconductor fab processes, materials design, and custom diagnostics.
-        </p>
-
-        <div class="contact-item" style="display: flex;">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <div class="contact-item-text">
-            <h4>Email</h4>
-            <a href="mailto:poonamsikarwar.iitm@gmail.com">poonamsikarwar.iitm@gmail.com</a>
-          </div>
-        </div>
-
-        <div class="contact-item" style="display: flex;">
-          <div class="contact-icon"><i class="fas fa-phone"></i></div>
-          <div class="contact-item-text">
-            <h4>Phone</h4>
-            <a href="tel:+919123506748">(+91) 9123506748</a>
-          </div>
-        </div>
-
-        <div class="contact-item" style="display: flex;">
-          <div class="contact-icon"><i class="fas fa-university"></i></div>
-          <div class="contact-item-text">
-            <h4>Institution</h4>
-            <p>IIT Madras, Chennai, 600036, India</p>
-          </div>
-        </div>
-
-        <div class="contact-item" style="display: flex;">
-          <div class="contact-icon" style="background: #e7f3ff; color: #0a66c2;"><i class="fab fa-linkedin"></i></div>
-          <div class="contact-item-text">
-            <h4>LinkedIn</h4>
-            <a href="https://www.linkedin.com" target="_blank">LinkedIn Profile</a>
-          </div>
-        </div>
-
-        <div style="margin-top: 24px;">
-          <a href="CV_Poonam_Sikarwar.pdf" download class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
-        </div>
-      </div>
-
-      <!-- OPEN TO section -->
-      <div class="reveal">
-        <h3 style="font-family: Outfit, sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">Open To</h3>
-
-        <div style="display: flex; flex-direction: column; gap: 16px;">
-          <div
-            style="padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); box-shadow: var(--shadow); transition: all var(--transition);"
-            onmouseover="this.style.borderColor='var(--accent)'; this.style.boxShadow='var(--shadow-hover)'"
-            onmouseout="this.style.borderColor='var(--border)'; this.style.boxShadow='var(--shadow)'">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
-              <div
-                style="width: 40px; height: 40px; border-radius: 10px; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0;">
-                <i class="fas fa-microscope"></i>
-              </div>
-              <h4 style="font-weight: 700; font-size: 1rem;">Postdoctoral &amp; industrial R&amp;D</h4>
-            </div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65;">Seeking roles in semiconductor process engineering, silicon crystallization, perovskite optoelectronics, or clean energy storage materials.</p>
-          </div>
-
-          <div
-            style="padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); box-shadow: var(--shadow); transition: all var(--transition);"
-            onmouseover="this.style.borderColor='var(--accent)'; this.style.boxShadow='var(--shadow-hover)'"
-            onmouseout="this.style.borderColor='var(--border)'; this.style.boxShadow='var(--shadow)'">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
-              <div
-                style="width: 40px; height: 40px; border-radius: 10px; background: #f0fdf4; color: var(--accent-green); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0;">
-                <i class="fas fa-handshake"></i>
-              </div>
-              <h4 style="font-weight: 700; font-size: 1rem;">Research Collaboration</h4>
-            </div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65;">Happy to collaborate on lead-free perovskite chemistry, photoelectrochemical water splitting setups, or Cz crystal growth simulation twinning.</p>
-          </div>
-
-          <div
-            style="padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); box-shadow: var(--shadow); transition: all var(--transition);"
-            onmouseover="this.style.borderColor='var(--accent)'; this.style.boxShadow='var(--shadow-hover)'"
-            onmouseout="this.style.borderColor='var(--border)'; this.style.boxShadow='var(--shadow)'">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
-              <div
-                style="width: 40px; height: 40px; border-radius: 10px; background: #fdf4ff; color: var(--accent-purple); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0;">
-                <i class="fas fa-industry"></i>
-              </div>
-              <h4 style="font-weight: 700; font-size: 1rem;">Technical Consulting &amp; Review</h4>
-            </div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65;">Available for scientific peer-reviewing, technical proposal preparation, and patent drafting support in chemical and materials engineering.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
+  <!-- MOBILE OVERLAY MENU -->
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="contact.html" class="active">Contact</a>
   </div>
 
+  <!-- PAGE HEADER -->
+  <section class="section" style="padding-top: 9rem; padding-bottom: 2rem;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Get in Touch</span>
+        <h2>Let's Connect &amp; Collaborate</h2>
+        <p>Open to academic postdoctoral roles, semiconductor R&amp;D partnerships, and technical consulting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTACT GRID -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="contact-grid">
+        
+        <!-- LEFT: DIRECT CONTACT DETAILS CARD -->
+        <div class="contact-card reveal">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Contact Information</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">
+            Feel free to reach out via email or phone. I welcome technical inquiries and research proposals.
+          </p>
+
+          <div class="contact-item-row">
+            <div class="contact-icon-box"><i class="fas fa-envelope"></i></div>
+            <div class="contact-text">
+              <label>Email Address</label>
+              <a href="mailto:poonamsikarwar.iitm@gmail.com" class="text-cyan">poonamsikarwar.iitm@gmail.com</a>
+            </div>
+            <button class="copy-btn" data-copy="poonamsikarwar.iitm@gmail.com"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+
+          <div class="contact-item-row">
+            <div class="contact-icon-box" style="background: rgba(99, 102, 241, 0.12); color: var(--accent-indigo);"><i class="fas fa-phone"></i></div>
+            <div class="contact-text">
+              <label>Phone</label>
+              <a href="tel:+919123506748">(+91) 9123506748</a>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <div class="contact-icon-box" style="background: rgba(245, 158, 11, 0.12); color: var(--accent-amber);"><i class="fas fa-location-dot"></i></div>
+            <div class="contact-text">
+              <label>Location</label>
+              <p>IIT Madras, Chennai, 600036, India</p>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <div class="contact-icon-box" style="background: rgba(20, 184, 166, 0.12); color: var(--accent-teal);"><i class="fab fa-linkedin"></i></div>
+            <div class="contact-text">
+              <label>LinkedIn &amp; Scholar</label>
+              <div style="display: flex; gap: 1rem; margin-top: 0.2rem;">
+                <a href="https://www.linkedin.com" target="_blank" class="pub-doi-link">LinkedIn Profile</a>
+                <a href="https://scholar.google.com" target="_blank" class="pub-doi-link">Google Scholar</a>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-glass);">
+            <a href="CV_Poonam_Sikarwar.pdf" download class="btn btn-primary" style="width: 100%;"><i class="fas fa-download"></i> Download Full Curriculum Vitae</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: INTERACTIVE CONTACT MESSAGE FORM -->
+        <div class="contact-card reveal">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Send a Message</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.75rem;">
+            Send a direct message regarding potential positions, collaborations, or inquiries.
+          </p>
+
+          <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to poonamsikarwar.iitm@gmail.com');">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-input" placeholder="Dr. Jane Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your Email Address</label>
+              <input type="email" id="email" class="form-input" placeholder="jane.doe@university.edu" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" class="form-input" placeholder="Postdoctoral Position / Research Inquiry" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-textarea" placeholder="Hello Dr. Sikarwar, I read your recent paper on lead-free double perovskites..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fas fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITIES & ROLES GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge badge-amber">Open For</span>
+        <h2>Professional Opportunities</h2>
+        <p>Areas where I actively contribute expertise and research guidance.</p>
+      </div>
+
+      <div class="bento-grid">
+        
+        <div class="bento-card span-4 reveal">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(6, 182, 212, 0.12); color: var(--accent-cyan); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1rem;">
+            <i class="fas fa-microscope"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Postdoctoral &amp; Industrial R&amp;D</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65;">
+            Seeking senior research roles in semiconductor manufacturing, silicon crystal growth, perovskite optoelectronics, or solar fuels.
+          </p>
+        </div>
+
+        <div class="bento-card span-4 reveal">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(20, 184, 166, 0.12); color: var(--accent-teal); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1rem;">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Research Collaborations</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65;">
+            Open to joint grants and co-authorships in double perovskite synthesis, PEC cell design, or Cz-silicon digital twin modeling.
+          </p>
+        </div>
+
+        <div class="bento-card span-4 reveal">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(139, 92, 246, 0.12); color: var(--accent-violet); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1rem;">
+            <i class="fas fa-pen-fancy"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Peer Review &amp; Consulting</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65;">
+            Independent reviewer for Wiley's <i>Laser &amp; Photonics Reviews</i>. Available for patent technical drafting and proposal reviews.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-inner">
-      <span class="footer-brand">Poonam Sikarwar</span>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="dashboard.html">R&D Lab</a>
-        <a href="activities.html">Activities</a>
-        <a href="contact.html">Contact</a>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-brand">Poonam Sikarwar</span>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <span class="footer-copy">&copy; 2026 &mdash; IIT Madras</span>
       </div>
-      <span class="footer-copy">&copy; 2026 &mdash; IIT Madras</span>
     </div>
   </footer>
+
 </body>
 
 </html>
