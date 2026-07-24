@@ -5,34 +5,16 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── 1. Page Transitions ── */
+  /* ── 1. Page Transitions & History Handler ── */
   const overlay = document.querySelector('.page-transition');
-  if (overlay) {
-    setTimeout(() => overlay.classList.add('loaded'), 80);
+  function hideOverlay() {
+    if (overlay) {
+      overlay.classList.add('loaded');
+    }
   }
 
-  document.querySelectorAll('a[href]').forEach(link => {
-    if (
-      link.hostname === window.location.hostname &&
-      !link.target &&
-      !link.hasAttribute('download') &&
-      !link.href.startsWith('mailto:') &&
-      !link.href.startsWith('tel:') &&
-      !link.href.includes('#')
-    ) {
-      link.addEventListener('click', e => {
-        const dest = link.href;
-        if (dest === window.location.href) return;
-        e.preventDefault();
-        if (overlay) {
-          overlay.classList.remove('loaded');
-          setTimeout(() => { window.location.href = dest; }, 300);
-        } else {
-          window.location.href = dest;
-        }
-      });
-    }
-  });
+  hideOverlay();
+  window.addEventListener('pageshow', hideOverlay);
 
   /* ── 2. Floating Nav Active State & Mobile Menu ── */
   const page = window.location.pathname.split('/').pop() || 'index.html';

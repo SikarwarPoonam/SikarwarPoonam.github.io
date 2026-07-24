@@ -124,11 +124,12 @@ body::after {
   z-index: 9999;
   opacity: 1;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .page-transition.loaded {
   opacity: 0;
+  visibility: hidden;
 }
 
 a {
