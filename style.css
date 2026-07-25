@@ -735,6 +735,16 @@ h4,
   margin: 0;
 }
 
+.layout-text-left{
+    display:grid;
+    grid-template-columns:1.35fr 1fr;
+}
+
+.layout-image-left{
+    display:grid;
+    grid-template-columns:1fr 1.35fr;
+}
+
 .domain-card.reverse .domain-content {
   order: 2;
 }
