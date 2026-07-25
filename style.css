@@ -643,7 +643,7 @@ h1, h2, h3, h4, .font-heading {
 
 .domain-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
 }
 
