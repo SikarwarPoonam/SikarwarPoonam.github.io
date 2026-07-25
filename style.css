@@ -743,46 +743,101 @@ h1, h2, h3, h4, .font-heading {
 }
 
 
-/* IMAGE PLACEHOLDERS */
+/* IMAGE PLACEHOLDERS & SCIENTIFIC FIGURE PANELS */
 
-.figure-placeholder{
-
-    width:100%;
-
-    aspect-ratio:16/10;
-
-    border-radius:18px;
-
-    border:1px dashed rgba(255,255,255,.18);
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(79,70,229,.12),
-        rgba(14,165,233,.10)
-    );
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    color:var(--text-muted);
-
-    font-size:.95rem;
-
-    transition:.3s;
-
+.figure-placeholder {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(10, 14, 23, 0.75);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: .95rem;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
 }
 
-.figure-placeholder:hover{
+.figure-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-    transform:scale(1.02);
+.figure-placeholder:hover img {
+    transform: scale(1.05);
+}
 
-    border-color:#6366f1;
+.figure-placeholder:hover {
+    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.18);
+}
 
+.figure-caption-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.55rem 0.9rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(7, 9, 14, 0.94) 100%);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    color: var(--text-main);
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.figure-caption-bar strong {
+    color: var(--accent-cyan);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+}
+
+/* HOME PAGE FOCUS CARDS */
+
+.home-focus-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-lg);
+    padding: 1.6rem;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.home-focus-card:hover {
+    border-color: var(--border-glass-bright);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.home-focus-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-glass);
+    margin-bottom: 1.1rem;
+    transition: transform 0.35s ease;
+}
+
+.home-focus-card:hover .home-focus-img {
+    transform: scale(1.03);
 }
 
 
