@@ -682,7 +682,6 @@ h1, h2, h3, h4, .font-heading {
   border-radius: var(--radius-lg);
   padding: 1.85rem 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 1.75rem;
   align-items: center;
   overflow: hidden;
