@@ -9,6 +9,7 @@
   --bg-dark: #07090e;
   --bg-dark-alt: #0a0e17;
   --bg-surface: rgba(15, 22, 36, 0.65);
+  --surface: rgba(15, 22, 36, 0.65);
   --bg-surface-hover: rgba(22, 32, 50, 0.75);
   --bg-glass-pill: rgba(10, 14, 23, 0.82);
   
@@ -25,6 +26,7 @@
 
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
+  --text-secondary: #cbd5e1;
   --text-dim: #64748b;
 
   --gradient-primary: linear-gradient(135deg, #06b6d4 0%, #6366f1 50%, #8b5cf6 100%);
@@ -679,15 +681,17 @@ h1, h2, h3, h4, .font-heading {
     gap:.8rem;
 }
 
-.domain-card h3{
+.domain-card h3 {
+    font-size: 1.55rem;
+    line-height: 1.3;
+    font-weight: 700;
+    max-width: 100%;
+    margin: 0;
+}
 
-    font-size:2rem;
-    line-height:1.2;
-    font-weight:700;
-
-    max-width:18ch;
-    margin:0;
-
+.domain-card-even,
+.domain-card:nth-child(even) {
+    grid-template-columns: 1fr 1.35fr;
 }
 
 .domain-card p{
