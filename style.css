@@ -206,13 +206,13 @@ h4,
 }
 
 .section {
-  padding: 3 rem 0;
+  padding: 4.5rem 0;
   position: relative;
   z-index: 2;
 }
 
 .section-header {
-  margin-bottom: 2 rem;
+  margin-bottom: 3rem;
 }
 
 .section-header h2 {
