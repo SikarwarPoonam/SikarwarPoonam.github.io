@@ -206,13 +206,13 @@ h4,
 }
 
 .section {
-  padding: 4.5rem 0;
+  padding: 3 rem 0;
   position: relative;
   z-index: 2;
 }
 
 .section-header {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2 rem;
 }
 
 .section-header h2 {
@@ -224,7 +224,7 @@ h4,
 .section-header p {
   font-size: 1.02rem;
   color: var(--text-muted);
-  max-width: 680px;
+  max-width: 880px;
   line-height: 1.6;
 }
 
