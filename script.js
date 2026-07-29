@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   revealEls.forEach(el => revealObserver.observe(el));
 
   /* ── 4. Mouse-Tracking Card Ambient Spotlight ── */
-  const spotCards = document.querySelectorAll('.bento-card, .pub-card, .contact-card');
+  const spotCards = document.querySelectorAll('.bento-card, ..domain-card, .contact-card');
   spotCards.forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
