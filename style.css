@@ -891,7 +891,25 @@ h4,
   box-shadow: 0 8px 25px rgba(6, 182, 212, 0.18);
 }
 
-.figure-caption-bar {
+/* Figure caption below image */
+
+.figure-caption{
+
+    margin-top:0.45rem;
+
+    font-size:0.82rem;
+
+    color:var(--text-muted);
+
+    line-height:1.45;
+
+    text-align:center;
+
+    font-style:italic;
+
+}
+
+/* .figure-caption-bar {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -908,7 +926,7 @@ h4,
   font-weight: 600;
   z-index: 2;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
+} */
 
 .figure-caption-bar strong {
   color: var(--accent-cyan);
