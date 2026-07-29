@@ -892,12 +892,17 @@ h4,
 }
 
 /* Figure caption below image */
+.figure-block{
+    display:flex;
+    flex-direction:column;
+    gap:0.45rem;
+}
 
 .figure-caption{
 
     margin-top:0.45rem;
 
-    font-size:0.82rem;
+    font-size:0.5rem;
 
     color:var(--text-muted);
 
