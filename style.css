@@ -928,12 +928,12 @@ h4,
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 } */
 
-.figure-caption-bar strong {
+/* .figure-caption-bar strong {
   color: var(--accent-cyan);
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
-}
+} */
 
 /* HOME PAGE FOCUS CARDS */
 
