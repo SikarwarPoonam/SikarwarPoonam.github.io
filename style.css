@@ -736,6 +736,7 @@ h4,
   grid-template-columns: 35% 65%;
   gap: 2.5rem;
   align-items: start;
+  width:100%;
 }
 
 /* VARIATION 3: TOP DUAL FIGURES BANNER / BOTTOM NARRATIVE & METADATA GRID */
@@ -758,9 +759,11 @@ h4,
 
 .editorial-layout-3 .domain-bottom-grid {
   display: grid;
-  grid-template-columns: 1.45fr 1fr;
   gap: 2.5rem;
   align-items: start;
+  grid-template-columns:65% 35%;
+  width:100%;
+  
 }
 
 /* VARIATION 4: HERO PRIMARY FEATURE / ASYMMETRIC SPLIT */
@@ -769,6 +772,7 @@ h4,
   grid-template-columns: 1fr 1.45fr;
   gap: 2.5rem;
   align-items: start;
+  width:100%;
 }
 
 .editorial-layout-4 .hero-figure-wrapper {
