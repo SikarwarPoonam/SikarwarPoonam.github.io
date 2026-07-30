@@ -743,6 +743,7 @@ h4,
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  width:100%;
 }
 
 .editorial-layout-3 .domain-gallery-top {
