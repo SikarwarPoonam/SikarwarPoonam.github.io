@@ -736,7 +736,7 @@ h4,
   grid-template-columns: 35% 65%;
   gap: 2.5rem;
   align-items: start;
-  width:100%;
+  width: 100%;
 }
 
 /* VARIATION 3: TOP DUAL FIGURES BANNER / BOTTOM NARRATIVE & METADATA GRID */
@@ -744,7 +744,7 @@ h4,
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
-  width:100%;
+  width: 100%;
 }
 
 .editorial-layout-3 .domain-gallery-top {
@@ -761,9 +761,9 @@ h4,
   display: grid;
   gap: 2.5rem;
   align-items: start;
-  grid-template-columns:65% 35%;
-  width:100%;
-  
+  grid-template-columns: 65% 35%;
+  width: 100%;
+
 }
 
 /* VARIATION 4: HERO PRIMARY FEATURE / ASYMMETRIC SPLIT */
@@ -772,7 +772,7 @@ h4,
   grid-template-columns: 1fr 1.45fr;
   gap: 2.5rem;
   align-items: start;
-  width:100%;
+  width: 100%;
 }
 
 .editorial-layout-4 .hero-figure-wrapper {
@@ -849,7 +849,7 @@ h4,
   margin: 0;
 }
 
-.domain-card p {
+.domain-card p:not(.figure-caption) {
   margin: 0;
   width: 100%;
   max-width: none;
@@ -897,26 +897,26 @@ h4,
 }
 
 /* Figure caption below image */
-.figure-block{
-  width: 100%; 
-  display:flex;
-  flex-direction:column;
-  gap:0.45rem;
+.figure-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
 }
 
-.figure-caption{
+.figure-caption {
   margin-top: 0.3rem;
   padding: 0 0.3rem;
   font-size: 0.55rem;
   line-height: 1.3;
   font-weight: 500;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   text-align: center;
   font-style: italic;
 }
 
 .figure-caption p {
-    text-align: center;
+  text-align: center;
 }
 
 /* HOME PAGE FOCUS CARDS */
@@ -1055,6 +1055,7 @@ h4,
     padding: 0.85rem 1rem;
   }
 }
+
 
 /* ==========================================================================
    PATENT SPOTLIGHT BANNER
