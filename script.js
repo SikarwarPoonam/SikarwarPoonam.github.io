@@ -101,30 +101,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ── 6. Publication Filtering ── */
+  
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const pubCards = document.querySelectorAll('.domain-card, .pub-card, .patent-banner');
 
-  if (filterBtns.length > 0 && pubCards.length > 0) {
+  // Select BOTH publication cards and patent banner
+  const items = document.querySelectorAll('.domain-card, .pub-card, .patent-banner');
+
+  if (filterBtns.length && items.length) {
+
     filterBtns.forEach(btn => {
+
       btn.addEventListener('click', () => {
+
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        const filter = btn.getAttribute('data-filter');
+        const filter = btn.dataset.filter;
 
-        pubCards.forEach(card => {
-          const cat = card.getAttribute('data-category');
-          if (filter === 'all' || cat === filter) {
-            card.style.display = '';
-            setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+        items.forEach(item => {
+
+          const category = item.dataset.category;
+
+          if (filter === 'all' || category === filter) {
+            item.style.display = '';
           } else {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(10px)';
-            setTimeout(() => { card.style.display = 'none'; }, 200);
+            item.style.display = 'none';
           }
+
         });
+
       });
+
     });
+
   }
 
   /* ── 7. Copy-to-Clipboard Function ── */
