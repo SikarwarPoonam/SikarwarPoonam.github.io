@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── 6. Publication Filtering ── */
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const pubCards = document.querySelectorAll('.pub-card');
+  const pubCards = document.querySelectorAll('.domain-card, .pub-card');
 
   if (filterBtns.length > 0 && pubCards.length > 0) {
     filterBtns.forEach(btn => {
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pubCards.forEach(card => {
           const cat = card.getAttribute('data-category');
           if (filter === 'all' || cat === filter || (filter === 'perovskite' && cat && cat.includes('perovskite'))) {
-            card.style.display = 'grid';
+            card.style.display = '';
             setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
           } else {
             card.style.opacity = '0';
