@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         pubCards.forEach(card => {
           const cat = card.getAttribute('data-category');
-          if (filter === 'all' || cat === filter || (filter === 'perovskite' && cat && cat.includes('perovskite'))) {
+          if (filter === 'all' || cat === filter) {
             card.style.display = '';
             setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
           } else {
