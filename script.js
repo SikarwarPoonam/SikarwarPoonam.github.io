@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── 6. Publication Filtering ── */
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const pubCards = document.querySelectorAll('.domain-card, .pub-card');
+  const pubCards = document.querySelectorAll('.domain-card, .pub-card, .patent-banner');
 
   if (filterBtns.length > 0 && pubCards.length > 0) {
     filterBtns.forEach(btn => {
